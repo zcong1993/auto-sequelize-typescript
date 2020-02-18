@@ -1,12 +1,15 @@
 {
   "name": "@zcong/auto-sequelize-typescript",
-  "version": "0.0.0",
-  "description": "my cool project",
+  "version": "0.1.0",
+  "description": "auto generate model files from exists db schemas",
   "main": "./dist/index.js",
   "files": [
     "dist",
     "src"
   ],
+  "bin": {
+    "auto-seq-ts": "./dist/bin/index.js"
+  },
   "scripts": {
     "build": "tsc",
     "test": "npm run lint && npm run jest",
