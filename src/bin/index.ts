@@ -3,7 +3,7 @@ import { join } from 'path'
 import { existsSync } from 'fs'
 import { cac } from 'cac'
 import { sync as mkdirp } from 'mkdirp'
-import { Sequelize } from 'sequelize-typescript'
+import { Sequelize } from 'sequelize'
 import { auto } from '../'
 
 const normalizePath = (p: string, root: string = process.cwd()): string =>
