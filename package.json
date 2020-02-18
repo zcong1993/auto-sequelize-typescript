@@ -1,0 +1,73 @@
+{
+  "name": "@zcong/auto-sequelize-typescript",
+  "version": "0.0.0",
+  "description": "my cool project",
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run lint && npm run jest",
+    "test:cov": "npm run lint && npm run jest:cov",
+    "lint": "tslint -p .",
+    "format": "prettier --write '**/*.{ts,json,md}'",
+    "jest": "jest --detectOpenHandles --forceExit",
+    "jest:cov": "jest --coverage --detectOpenHandles --forceExit",
+    "prepublishOnly": "npm run build"
+  },
+  "types": "./dist/index.d.ts",
+  "author": "zcong1993",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^25.1.2",
+    "@types/lodash": "^4.14.149",
+    "@types/mkdirp": "^1.0.0",
+    "@types/node": "^13.7.1",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "sequelize-typescript": "^1.1.0",
+    "ts-jest": "^25.2.0",
+    "tslint": "^6.0.0",
+    "tslint-config-airbnb": "^5.11.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.5"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,json,ts}": [
+      "yarn format",
+      "git add ."
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && lint-staged"
+    }
+  },
+  "dependencies": {
+    "cac": "^6.5.6",
+    "camelcase": "^5.3.1",
+    "lodash": "^4.17.15",
+    "mkdirp": "^1.0.3",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.4"
+  }
+}
