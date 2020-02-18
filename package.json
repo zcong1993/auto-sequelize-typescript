@@ -11,14 +11,15 @@
     "auto-seq-ts": "./dist/bin/index.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "npm run clean && tsc",
     "test": "npm run lint && npm run jest",
     "test:cov": "npm run lint && npm run jest:cov",
     "lint": "tslint -p .",
     "format": "prettier --write '**/*.{ts,json,md}'",
     "jest": "jest --detectOpenHandles --forceExit",
     "jest:cov": "jest --coverage --detectOpenHandles --forceExit",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "clean": "rm -rf models dist"
   },
   "types": "./dist/index.d.ts",
   "author": "zcong1993",

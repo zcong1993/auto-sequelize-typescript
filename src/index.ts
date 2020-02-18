@@ -113,6 +113,8 @@ const getType = (
   throw new Error(`type ${type} not impl yet`)
 }
 
+const wrap = (str: string, q: string = "'"): string => `${q}${str}${q}`
+
 const getColumnOptions = (opt: any): any => {
   const picks: string[] = []
   if (opt.allowNull === false) {
@@ -175,9 +177,14 @@ const generateText = (schema: any, tableName: string) => {
       ) {
         colOpt.defaultValue = `Sequelize.literal('${colOpt.defaultValue}')`
         importSet.add('Sequelize')
-      } else if (colOpt.defaultValue) {
-        colOpt.defaultValue = `'${colOpt.defaultValue}'`
+      } else if (colOpt.defaultValue && tt.tsType !== 'number') {
+        colOpt.defaultValue = wrap(colOpt.defaultValue)
       }
+
+      if (colOpt.comment) {
+        colOpt.comment = wrap(colOpt.comment)
+      }
+
       colStr = `${indent}@Column(${object2code(colOpt, im)})\n`
     } else {
       colStr = `${indent}@Column\n`
