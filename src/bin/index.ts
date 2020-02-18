@@ -27,6 +27,14 @@ cli
   .option('--out [out]', 'output folder', {
     default: './models'
   })
+  .option(
+    '--tables [tables]',
+    'tables you want to generate model, example: user,baby'
+  )
+  .option(
+    '--exclude [exclude]',
+    `tables you don't want to generate model, example: user,baby`
+  )
 
 cli.version(require('../../package.json')['version'])
 cli.help()
@@ -46,6 +54,14 @@ for (const f of required) {
   }
 }
 
+if (options.tables) {
+  options.tables = options.tables.split(',').map((str: string) => str.trim())
+}
+
+if (options.exclude) {
+  options.exclude = options.exclude.split(',').map((str: string) => str.trim())
+}
+
 options.out = normalizePath(options.out)
 
 if (!existsSync(options.out)) {
@@ -62,7 +78,9 @@ const seq = new Sequelize({
 })
 
 auto(seq, {
-  out: options.out
+  out: options.out,
+  tables: options.tables,
+  exclude: options.exclude
 }).catch(err => {
   console.log(err)
   process.exit(1)

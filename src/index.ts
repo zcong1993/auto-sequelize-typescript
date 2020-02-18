@@ -211,8 +211,15 @@ const writeFile = (filePath: string, content: string) => {
 }
 
 export const auto = async (sequelize: Sequelize, config: any) => {
-  const tables = await sequelize.getQueryInterface().showAllTables()
-  for (const t of tables) {
+  const tables: string[] = await sequelize.getQueryInterface().showAllTables()
+  let tbs = tables
+  if (config.tables) {
+    tbs = tbs.filter(t => config.tables.includes(t))
+  }
+  if (config.exclude) {
+    tbs = tbs.filter(t => !config.exclude.includes(t))
+  }
+  for (const t of tbs) {
     console.log(`generate model for table: ${t}`)
     const schema = await sequelize.getQueryInterface().describeTable(t)
     const content = generateText(schema, t)
