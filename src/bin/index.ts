@@ -35,11 +35,12 @@ cli
     '--exclude [exclude]',
     `tables you don't want to generate model, example: user,baby`
   )
+  .option('--no-column-type', 'if not need column type')
 
 cli.version(require('../../package.json')['version'])
 cli.help()
 
-const { options } = cli.parse()
+const { options, args } = cli.parse()
 
 if (options.h || options.v) {
   process.exit(0)
@@ -80,7 +81,8 @@ const seq = new Sequelize({
 auto(seq, {
   out: options.out,
   tables: options.tables,
-  exclude: options.exclude
+  exclude: options.exclude,
+  withColumnType: options.columnType
 }).catch(err => {
   console.log(err)
   process.exit(1)
