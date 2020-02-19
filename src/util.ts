@@ -153,6 +153,12 @@ export const getColumType = (t: string): string => {
   if (tt.match(/^geometry/)) {
     return 'DataType.GEOMETRY'
   }
+
+  // blob
+  if (tt.match(/blob$/)) {
+    const lengthType = tt.replace(/blob$/, '')
+    return lengthType ? `DataType.BLOB('${lengthType}')` : 'DataType.BLOB'
+  }
 }
 
 export const getType = (
@@ -209,7 +215,7 @@ export const getType = (
     }
   }
 
-  if (['BLOB'].includes(t)) {
+  if (['BLOB', 'TINYBLOB', 'MEDIUMBLOB', 'LONGBLOB'].includes(t)) {
     return {
       tsType: 'Buffer',
       columnType: getColumType(type),
