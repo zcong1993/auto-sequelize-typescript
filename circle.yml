@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:11.10.0
-      - image: circleci/mysql:8.0.4
+      - image: circleci/mysql:5.7
         environment:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: sample
