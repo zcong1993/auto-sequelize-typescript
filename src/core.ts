@@ -118,8 +118,10 @@ export const auto = async (sequelize: Sequelize, config: Config) => {
       writeFile(`${config.out}/${camelcase(t)}.ts`, content)
     }
   }
-  await sequelize.close()
+
   if (config.test) {
     return res
   }
+
+  await sequelize.close()
 }
