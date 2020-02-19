@@ -27,7 +27,7 @@ jobs:
           command: |
             sudo apt-get install mysql-client
             dockerize -wait tcp://localhost:3306 -timeout 1m
-            mysql -u root -proot sample < __test__/sample.sql
+            mysql -h 127.0.0.1 -u root -proot sample < __test__/sample.sql
       - run:
           name: test
           environment:
