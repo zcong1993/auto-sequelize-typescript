@@ -110,6 +110,12 @@ const getType = (
     }
   }
 
+  if (['BLOB'].includes(t)) {
+    return {
+      tsType: 'Buffer'
+    }
+  }
+
   throw new Error(`type ${type} not impl yet`)
 }
 
