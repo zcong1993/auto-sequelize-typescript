@@ -2,10 +2,203 @@
 
 exports[`exclude option should work well 1`] = `
 Object {
-  "./null/orders.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
+  "./null/customers.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
-@Table({ tableName: 'orders' })
-export default class Orders extends Model<Orders> {
+@Table({ tableName: 'customers' })
+export default class Customers extends Model<Customers> {
+  @Column({
+    allowNull: false,
+    primaryKey: true,
+    type: DataType.INTEGER({ length: 11 }),
+  })
+  customerNumber: number
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  customerName: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  contactLastName: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  contactFirstName: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  phone: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  addressLine1: string
+
+  @Column({
+    type: DataType.STRING(50),
+  })
+  addressLine2?: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  city: string
+
+  @Column({
+    type: DataType.STRING(50),
+  })
+  state?: string
+
+  @Column({
+    type: DataType.STRING(15),
+  })
+  postalCode?: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  country: string
+
+  @Column({
+    type: DataType.INTEGER({ length: 11 }),
+  })
+  salesRepEmployeeNumber?: number
+
+  @Column({
+    type: DataType.DECIMAL,
+  })
+  creditLimit?: number
+
+}
+",
+  "./null/employees.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
+
+@Table({ tableName: 'employees' })
+export default class Employees extends Model<Employees> {
+  @Column({
+    allowNull: false,
+    primaryKey: true,
+    type: DataType.INTEGER({ length: 11 }),
+  })
+  employeeNumber: number
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  lastName: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  firstName: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(10),
+  })
+  extension: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(100),
+  })
+  email: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(10),
+  })
+  officeCode: string
+
+  @Column({
+    type: DataType.INTEGER({ length: 11 }),
+  })
+  reportsTo?: number
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  jobTitle: string
+
+}
+",
+  "./null/offices.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
+
+@Table({ tableName: 'offices' })
+export default class Offices extends Model<Offices> {
+  @Column({
+    allowNull: false,
+    primaryKey: true,
+    type: DataType.STRING(10),
+  })
+  officeCode: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  city: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  phone: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  addressLine1: string
+
+  @Column({
+    type: DataType.STRING(50),
+  })
+  addressLine2?: string
+
+  @Column({
+    type: DataType.STRING(50),
+  })
+  state?: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  country: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(15),
+  })
+  postalCode: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(10),
+  })
+  territory: string
+
+}
+",
+  "./null/orderdetails.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
+
+@Table({ tableName: 'orderdetails' })
+export default class Orderdetails extends Model<Orderdetails> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -15,46 +208,6 @@ export default class Orders extends Model<Orders> {
 
   @Column({
     allowNull: false,
-    type: DataType.DATEONLY,
-  })
-  orderDate: Date
-
-  @Column({
-    allowNull: false,
-    type: DataType.DATEONLY,
-  })
-  requiredDate: Date
-
-  @Column({
-    type: DataType.DATEONLY,
-  })
-  shippedDate?: Date
-
-  @Column({
-    allowNull: false,
-    type: DataType.STRING(15),
-  })
-  status: string
-
-  @Column({
-    type: DataType.TEXT,
-  })
-  comments?: string
-
-  @Column({
-    allowNull: false,
-    type: DataType.INTEGER({ length: 11 }),
-  })
-  customerNumber: number
-
-}
-",
-  "./null/products.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
-
-@Table({ tableName: 'products' })
-export default class Products extends Model<Products> {
-  @Column({
-    allowNull: false,
     primaryKey: true,
     type: DataType.STRING(15),
   })
@@ -62,51 +215,81 @@ export default class Products extends Model<Products> {
 
   @Column({
     allowNull: false,
-    type: DataType.STRING(70),
+    type: DataType.INTEGER({ length: 11 }),
   })
-  productName: string
+  quantityOrdered: number
 
   @Column({
     allowNull: false,
-    type: DataType.STRING(50),
+    type: DataType.DECIMAL,
   })
-  productLine: string
-
-  @Column({
-    allowNull: false,
-    type: DataType.STRING(10),
-  })
-  productScale: string
-
-  @Column({
-    allowNull: false,
-    type: DataType.STRING(50),
-  })
-  productVendor: string
-
-  @Column({
-    allowNull: false,
-    type: DataType.TEXT,
-  })
-  productDescription: string
+  priceEach: number
 
   @Column({
     allowNull: false,
     type: DataType.INTEGER({ length: 6 }),
   })
-  quantityInStock: number
+  orderLineNumber: number
+
+}
+",
+  "./null/payments.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
+
+@Table({ tableName: 'payments' })
+export default class Payments extends Model<Payments> {
+  @Column({
+    allowNull: false,
+    primaryKey: true,
+    type: DataType.INTEGER({ length: 11 }),
+  })
+  customerNumber: number
+
+  @Column({
+    allowNull: false,
+    primaryKey: true,
+    type: DataType.STRING(50),
+  })
+  checkNumber: string
+
+  @Column({
+    allowNull: false,
+    type: DataType.DATEONLY,
+  })
+  paymentDate: Date
 
   @Column({
     allowNull: false,
     type: DataType.DECIMAL,
   })
-  buyPrice: number
+  amount: number
 
+}
+",
+  "./null/productlines.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
+
+@Table({ tableName: 'productlines' })
+export default class Productlines extends Model<Productlines> {
   @Column({
     allowNull: false,
-    type: DataType.DECIMAL,
+    primaryKey: true,
+    type: DataType.STRING(50),
   })
-  msrp: number
+  productLine: string
+
+  @Column({
+    type: DataType.STRING(4000),
+  })
+  textDescription?: string
+
+  @Column({
+    type: DataType.TEXT,
+  })
+  htmlDescription?: string
+
+  @Column({
+    type: DataType.BLOB('medium'),
+  })
+  image?: Buffer
 
 }
 ",

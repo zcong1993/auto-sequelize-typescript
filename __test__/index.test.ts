@@ -30,7 +30,7 @@ it('exclude option should work well', async () => {
   const res = await auto(seq, {
     test: true,
     out: './null',
-    tables: ['orders', 'products']
+    exclude: ['orders', 'products']
   })
 
   expect(res).toMatchSnapshot()
