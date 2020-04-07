@@ -68,7 +68,7 @@
   },
   "dependencies": {
     "cac": "^6.5.6",
-    "camelcase": "^5.3.1",
+    "camelcase": "^6.0.0",
     "lodash": "^4.17.15",
     "mkdirp": "^1.0.3",
     "mysql2": "^2.1.0",
