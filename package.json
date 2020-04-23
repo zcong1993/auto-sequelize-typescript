@@ -1,6 +1,6 @@
 {
   "name": "@zcong/auto-sequelize-typescript",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "auto generate model files from exists db schemas",
   "main": "./dist/index.js",
   "files": [
