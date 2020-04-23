@@ -134,6 +134,60 @@ export default class Employees extends Model<Employees> {
   jobTitle: string
 }
 ",
+  "./null/family.ts": "import { Model, Column, Table, DataType, Sequelize } from 'sequelize-typescript'
+
+@Table({ tableName: 'family' })
+export default class Family extends Model<Family> {
+  @Column({
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true,
+    type: DataType.INTEGER({ length: 11 }),
+  })
+  familyId: number
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  name: string
+
+  @Column({
+    type: DataType.STRING(50),
+  })
+  phase?: string
+
+  @Column({
+    comment: 'comment',
+    type: DataType.STRING(64),
+  })
+  customerId?: string
+
+  @Column({
+    allowNull: false,
+    defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+    type: DataType.DATE,
+  })
+  createdAt: Date
+
+  @Column({
+    allowNull: false,
+    defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+    type: DataType.DATE,
+  })
+  updatedAt: Date
+
+  @Column({
+    type: DataType.STRING(50),
+  })
+  createdBy?: string
+
+  @Column({
+    type: DataType.STRING(50),
+  })
+  updatedBy?: string
+}
+",
   "./null/offices.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'offices' })
@@ -444,6 +498,62 @@ export class Employees {
   jobTitle: string
 }
 ",
+  "./null/family.ts": "import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+
+@Entity({ name: 'family' })
+export class Family {
+  @PrimaryGeneratedColumn({
+    type: 'int',
+  })
+  familyId: number
+
+  @Column({
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  name: string
+
+  @Column({
+    type: 'varchar',
+    length: 50,
+  })
+  phase?: string
+
+  @Column({
+    comment: 'comment',
+    type: 'varchar',
+    length: 64,
+  })
+  customerId?: string
+
+  @Column({
+    nullable: false,
+    default: () => 'CURRENT_TIMESTAMP',
+    type: 'timestamp',
+  })
+  createdAt: Date
+
+  @Column({
+    nullable: false,
+    default: () => 'CURRENT_TIMESTAMP',
+    type: 'timestamp',
+  })
+  updatedAt: Date
+
+  @Column({
+    type: 'varchar',
+    length: 50,
+  })
+  createdBy?: string
+
+  @Column({
+    type: 'varchar',
+    length: 50,
+  })
+  updatedBy?: string
+}
+",
   "./null/offices.ts": "import { Entity, Column } from 'typeorm'
 
 @Entity({ name: 'offices' })
@@ -749,6 +859,60 @@ export default class Employees extends Model<Employees> {
     type: DataType.STRING(50),
   })
   jobTitle: string
+}
+",
+  "./null/family.ts": "import { Model, Column, Table, DataType, Sequelize } from 'sequelize-typescript'
+
+@Table({ tableName: 'family' })
+export default class Family extends Model<Family> {
+  @Column({
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true,
+    type: DataType.INTEGER({ length: 11 }),
+  })
+  familyId: number
+
+  @Column({
+    allowNull: false,
+    type: DataType.STRING(50),
+  })
+  name: string
+
+  @Column({
+    type: DataType.STRING(50),
+  })
+  phase?: string
+
+  @Column({
+    comment: 'comment',
+    type: DataType.STRING(64),
+  })
+  customerId?: string
+
+  @Column({
+    allowNull: false,
+    defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+    type: DataType.DATE,
+  })
+  createdAt: Date
+
+  @Column({
+    allowNull: false,
+    defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+    type: DataType.DATE,
+  })
+  updatedAt: Date
+
+  @Column({
+    type: DataType.STRING(50),
+  })
+  createdBy?: string
+
+  @Column({
+    type: DataType.STRING(50),
+  })
+  updatedBy?: string
 }
 ",
   "./null/offices.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
@@ -1165,6 +1329,62 @@ export class Employees {
     length: 50,
   })
   jobTitle: string
+}
+",
+  "./null/family.ts": "import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+
+@Entity({ name: 'family' })
+export class Family {
+  @PrimaryGeneratedColumn({
+    type: 'int',
+  })
+  familyId: number
+
+  @Column({
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  name: string
+
+  @Column({
+    type: 'varchar',
+    length: 50,
+  })
+  phase?: string
+
+  @Column({
+    comment: 'comment',
+    type: 'varchar',
+    length: 64,
+  })
+  customerId?: string
+
+  @Column({
+    nullable: false,
+    default: () => 'CURRENT_TIMESTAMP',
+    type: 'timestamp',
+  })
+  createdAt: Date
+
+  @Column({
+    nullable: false,
+    default: () => 'CURRENT_TIMESTAMP',
+    type: 'timestamp',
+  })
+  updatedAt: Date
+
+  @Column({
+    type: 'varchar',
+    length: 50,
+  })
+  createdBy?: string
+
+  @Column({
+    type: 'varchar',
+    length: 50,
+  })
+  updatedBy?: string
 }
 ",
   "./null/offices.ts": "import { Entity, Column } from 'typeorm'
@@ -1793,6 +2013,49 @@ export default class Employees extends Model<Employees> {
   jobTitle: string
 }
 ",
+  "./null/family.ts": "import { Model, Column, Table, Sequelize } from 'sequelize-typescript'
+
+@Table({ tableName: 'family' })
+export default class Family extends Model<Family> {
+  @Column({
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true,
+  })
+  familyId: number
+
+  @Column({
+    allowNull: false,
+  })
+  name: string
+
+  @Column
+  phase?: string
+
+  @Column({
+    comment: 'comment',
+  })
+  customerId?: string
+
+  @Column({
+    allowNull: false,
+    defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+  })
+  createdAt: Date
+
+  @Column({
+    allowNull: false,
+    defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+  })
+  updatedAt: Date
+
+  @Column
+  createdBy?: string
+
+  @Column
+  updatedBy?: string
+}
+",
   "./null/offices.ts": "import { Model, Column, Table } from 'sequelize-typescript'
 
 @Table({ tableName: 'offices' })
@@ -2115,6 +2378,46 @@ export class Employees {
     nullable: false,
   })
   jobTitle: string
+}
+",
+  "./null/family.ts": "import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+
+@Entity({ name: 'family' })
+export class Family {
+  @PrimaryGeneratedColumn({
+  })
+  familyId: number
+
+  @Column({
+    nullable: false,
+  })
+  name: string
+
+  @Column()
+  phase?: string
+
+  @Column({
+    comment: 'comment',
+  })
+  customerId?: string
+
+  @Column({
+    nullable: false,
+    default: () => 'CURRENT_TIMESTAMP',
+  })
+  createdAt: Date
+
+  @Column({
+    nullable: false,
+    default: () => 'CURRENT_TIMESTAMP',
+  })
+  updatedAt: Date
+
+  @Column()
+  createdBy?: string
+
+  @Column()
+  updatedBy?: string
 }
 ",
   "./null/offices.ts": "import { Entity, Column } from 'typeorm'
