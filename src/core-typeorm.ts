@@ -90,7 +90,7 @@ const getColumType = (t: string): object => {
     const length = getLength(tt)
     const res: any = { type }
     if (!isNull(length)) {
-      res.length = `${length}`.replace(/\(|\)/g, '')
+      res.width = `${length}`.replace(/\(|\)/g, '')
     }
     if (tt.match(/unsigned/i)) {
       res.unsigned = true
@@ -186,6 +186,7 @@ const transformColOptions = (opts: any) => {
     nullable: 'nullable',
     primary: 'primary',
     default: 'default',
+    width: 'width',
   }
   Object.keys(opts).forEach((k) => {
     if (mapping[k]) {
@@ -273,6 +274,7 @@ const generateText = (
           'nullable',
           'primary',
           'length',
+          'width',
         ])
         decoratorName = 'PrimaryGeneratedColumn'
         importSet.add('PrimaryGeneratedColumn')
