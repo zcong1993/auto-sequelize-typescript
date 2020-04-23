@@ -4,7 +4,7 @@ import { existsSync } from 'fs'
 import { cac } from 'cac'
 import { sync as mkdirp } from 'mkdirp'
 import { Sequelize } from 'sequelize'
-import { auto } from '../'
+import { auto, autoTypeorm } from '../'
 
 const normalizePath = (p: string, root: string = process.cwd()): string =>
   join(root, p)
@@ -13,19 +13,19 @@ const cli = cac('auto-seq-ts')
 
 cli
   .option('--dialect [dialect]', 'db dialect', {
-    default: 'mysql'
+    default: 'mysql',
   })
   .option('--host [host]', 'db host', {
-    default: 'localhost'
+    default: 'localhost',
   })
   .option('--port [port]', 'db port', {
-    default: '3306'
+    default: '3306',
   })
   .option('--user [user]', 'db user')
   .option('--password [password]', 'db password')
   .option('--db [db]', 'db database')
   .option('--out [out]', 'output folder', {
-    default: './models'
+    default: './models',
   })
   .option(
     '--tables [tables]',
@@ -36,11 +36,12 @@ cli
     `tables you don't want to generate model, example: user,baby`
   )
   .option('--no-column-type', 'if not need column type')
+  .option('--typeorm', 'if generate typeorm type')
 
 cli.version(require('../../package.json')['version'])
 cli.help()
 
-const { options, args } = cli.parse()
+const { options } = cli.parse()
 
 if (options.h || options.v) {
   process.exit(0)
@@ -75,15 +76,28 @@ const seq = new Sequelize({
   port: options.port,
   username: options.user,
   password: options.password,
-  database: options.db
+  database: options.db,
 })
 
-auto(seq, {
-  out: options.out,
-  tables: options.tables,
-  exclude: options.exclude,
-  withColumnType: options.columnType
-}).catch(err => {
-  console.log(err)
-  process.exit(1)
-})
+if (options.typeorm) {
+  console.log('generate typeorm model')
+  autoTypeorm(seq, {
+    out: options.out,
+    tables: options.tables,
+    exclude: options.exclude,
+    withColumnType: options.columnType,
+  }).catch((err) => {
+    console.log(err)
+    process.exit(1)
+  })
+} else {
+  auto(seq, {
+    out: options.out,
+    tables: options.tables,
+    exclude: options.exclude,
+    withColumnType: options.columnType,
+  }).catch((err) => {
+    console.log(err)
+    process.exit(1)
+  })
+}

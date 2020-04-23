@@ -39,7 +39,7 @@ export const object2code = (obj: any, im: IndentManager): string => {
   let indent = im.getIndent()
   let str = `{\n`
   indent = im.go()
-  Object.keys(obj).forEach(k => {
+  Object.keys(obj).forEach((k) => {
     let content: string
     switch (typeof obj[k]) {
       case 'object':
@@ -180,20 +180,20 @@ export const getType = (
       'DECIMAL',
       'FLOAT',
       'DOUBLE',
-      'BIT'
+      'BIT',
     ].includes(t)
   ) {
     if (type === 'TINYINT(1)') {
       return {
         tsType: 'boolean',
         columnType: getColumType(type),
-        import: 'DataType'
+        import: 'DataType',
       }
     }
     return {
       tsType: 'number',
       columnType: getColumType(type),
-      import: 'DataType'
+      import: 'DataType',
     }
   }
   if (
@@ -204,14 +204,14 @@ export const getType = (
     return {
       tsType: 'string',
       columnType: getColumType(type),
-      import: 'DataType'
+      import: 'DataType',
     }
   }
   if (['DATE', 'TIME', 'DATETIME', 'TIMESTAMP'].includes(t)) {
     return {
       tsType: 'Date',
       columnType: getColumType(type),
-      import: 'DataType'
+      import: 'DataType',
     }
   }
 
@@ -219,7 +219,7 @@ export const getType = (
     return {
       tsType: 'Buffer',
       columnType: getColumType(type),
-      import: 'DataType'
+      import: 'DataType',
     }
   }
 

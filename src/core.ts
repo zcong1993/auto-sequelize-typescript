@@ -20,6 +20,8 @@ const generateText = (
   res += `export default class ${modelClassName} extends Model<${modelClassName}> {\n`
 
   indent = im.go()
+  let index = 0
+  const length = Object.keys(schema).length
 
   for (const key of Object.keys(schema)) {
     const k = camelcase(key)
@@ -40,7 +42,7 @@ const generateText = (
           colOpt.type = tt.columnType
         } else {
           colOpt = {
-            type: tt.columnType
+            type: tt.columnType,
           }
         }
       }
@@ -54,7 +56,7 @@ const generateText = (
           'current_date',
           'current_time',
           'localtime',
-          'localtimestamp'
+          'localtimestamp',
         ].includes(colOpt.defaultValue.toLowerCase())
       ) {
         colOpt.defaultValue = `Sequelize.literal('${colOpt.defaultValue}')`
@@ -73,7 +75,11 @@ const generateText = (
     }
 
     res += colStr
-    res += `${indent}${k}${required ? '' : '?'}: ${tt.tsType}\n\n`
+    res += `${indent}${k}${required ? '' : '?'}: ${tt.tsType}\n`
+    if (index !== length - 1) {
+      res += '\n'
+    }
+    index += 1
   }
 
   indent = im.back()
@@ -100,10 +106,10 @@ export const auto = async (sequelize: Sequelize, config: Config) => {
   const tables: string[] = await sequelize.getQueryInterface().showAllTables()
   let tbs = tables
   if (config.tables) {
-    tbs = tbs.filter(t => config.tables.includes(t))
+    tbs = tbs.filter((t) => config.tables.includes(t))
   }
   if (config.exclude) {
-    tbs = tbs.filter(t => !config.exclude.includes(t))
+    tbs = tbs.filter((t) => !config.exclude.includes(t))
   }
 
   const res: Record<string, string> = {}
