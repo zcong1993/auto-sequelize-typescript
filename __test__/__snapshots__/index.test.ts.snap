@@ -168,14 +168,14 @@ export default class Family extends Model<Family> {
     defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
     type: DataType.DATE,
   })
-  createdAt: Date
+  createdAt?: Date
 
   @Column({
     allowNull: false,
     defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
     type: DataType.DATE,
   })
-  updatedAt: Date
+  updatedAt?: Date
 
   @Column({
     type: DataType.STRING(50),
@@ -532,14 +532,14 @@ export class Family {
     default: () => 'CURRENT_TIMESTAMP',
     type: 'timestamp',
   })
-  createdAt: Date
+  createdAt?: Date
 
   @Column({
     nullable: false,
     default: () => 'CURRENT_TIMESTAMP',
     type: 'timestamp',
   })
-  updatedAt: Date
+  updatedAt?: Date
 
   @Column({
     type: 'varchar',
@@ -895,14 +895,14 @@ export default class Family extends Model<Family> {
     defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
     type: DataType.DATE,
   })
-  createdAt: Date
+  createdAt?: Date
 
   @Column({
     allowNull: false,
     defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
     type: DataType.DATE,
   })
-  updatedAt: Date
+  updatedAt?: Date
 
   @Column({
     type: DataType.STRING(50),
@@ -1365,14 +1365,14 @@ export class Family {
     default: () => 'CURRENT_TIMESTAMP',
     type: 'timestamp',
   })
-  createdAt: Date
+  createdAt?: Date
 
   @Column({
     nullable: false,
     default: () => 'CURRENT_TIMESTAMP',
     type: 'timestamp',
   })
-  updatedAt: Date
+  updatedAt?: Date
 
   @Column({
     type: 'varchar',
@@ -2041,13 +2041,13 @@ export default class Family extends Model<Family> {
     allowNull: false,
     defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
   })
-  createdAt: Date
+  createdAt?: Date
 
   @Column({
     allowNull: false,
     defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
   })
-  updatedAt: Date
+  updatedAt?: Date
 
   @Column
   createdBy?: string
@@ -2405,13 +2405,13 @@ export class Family {
     nullable: false,
     default: () => 'CURRENT_TIMESTAMP',
   })
-  createdAt: Date
+  createdAt?: Date
 
   @Column({
     nullable: false,
     default: () => 'CURRENT_TIMESTAMP',
   })
-  updatedAt: Date
+  updatedAt?: Date
 
   @Column()
   createdBy?: string
