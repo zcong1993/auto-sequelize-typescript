@@ -34,7 +34,7 @@
     "lint-staged": "^10.0.7",
     "prettier": "^2.0.0",
     "sequelize-typescript": "^1.1.0",
-    "ts-jest": "^25.2.0",
+    "ts-jest": "^26.0.0",
     "tslint": "^6.0.0",
     "tslint-config-airbnb": "^5.11.2",
     "tslint-config-prettier": "^1.18.0",
