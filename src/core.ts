@@ -1,9 +1,15 @@
-import { isNull } from 'util'
 import { Sequelize } from 'sequelize'
 import * as camelcase from 'camelcase'
 import * as _ from 'lodash'
 import { IndentManager } from './im'
-import { getType, object2code, wrap, getColumnOptions, writeFile } from './util'
+import {
+  getType,
+  object2code,
+  wrap,
+  getColumnOptions,
+  writeFile,
+  isEmptyObj,
+} from './util'
 
 const generateText = (
   schema: any,
@@ -43,7 +49,7 @@ const generateText = (
       }
     }
 
-    if (!isNull(colOpt)) {
+    if (!isEmptyObj(colOpt)) {
       if (
         colOpt.defaultValue &&
         [
