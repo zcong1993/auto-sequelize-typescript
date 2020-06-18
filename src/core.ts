@@ -1,3 +1,4 @@
+import { isNull } from 'util'
 import { Sequelize } from 'sequelize'
 import * as camelcase from 'camelcase'
 import * as _ from 'lodash'
@@ -27,7 +28,7 @@ const generateText = (
     const k = camelcase(key)
     const column = schema[key]
     const tt = getType(column.type)
-    let colOpt = getColumnOptions(column)
+    const colOpt = getColumnOptions(column) || {}
     const required = !column.allowNull && !colOpt.defaultValue
 
     let colStr: string
@@ -38,17 +39,11 @@ const generateText = (
       }
 
       if (tt.columnType) {
-        if (colOpt) {
-          colOpt.type = tt.columnType
-        } else {
-          colOpt = {
-            type: tt.columnType,
-          }
-        }
+        colOpt.type = tt.columnType
       }
     }
 
-    if (colOpt) {
+    if (!isNull(colOpt)) {
       if (
         colOpt.defaultValue &&
         [
