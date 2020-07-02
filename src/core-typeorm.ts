@@ -187,6 +187,7 @@ const transformColOptions = (opts: any) => {
     primary: 'primary',
     default: 'default',
     width: 'width',
+    name: 'name',
   }
   Object.keys(opts).forEach((k) => {
     if (mapping[k]) {
@@ -224,6 +225,11 @@ const generateText = (
     const required = !column.allowNull && !colOpt.defaultValue
 
     let colStr: string
+
+    colOpt = {
+      name: `'${key}'`,
+      ...colOpt,
+    }
 
     if (withColumnType) {
       if (tt.import) {

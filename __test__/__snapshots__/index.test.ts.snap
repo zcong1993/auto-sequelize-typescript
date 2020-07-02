@@ -351,6 +351,7 @@ Object {
 @Entity({ name: 'customers' })
 export class Customers {
   @Column({
+    name: 'customerNumber',
     nullable: false,
     primary: true,
     type: 'int',
@@ -359,6 +360,7 @@ export class Customers {
   customerNumber: number
 
   @Column({
+    name: 'customerName',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -366,6 +368,7 @@ export class Customers {
   customerName: string
 
   @Column({
+    name: 'contactLastName',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -373,6 +376,7 @@ export class Customers {
   contactLastName: string
 
   @Column({
+    name: 'contactFirstName',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -380,6 +384,7 @@ export class Customers {
   contactFirstName: string
 
   @Column({
+    name: 'phone',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -387,6 +392,7 @@ export class Customers {
   phone: string
 
   @Column({
+    name: 'addressLine1',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -394,12 +400,14 @@ export class Customers {
   addressLine1: string
 
   @Column({
+    name: 'addressLine2',
     type: 'varchar',
     length: 50,
   })
   addressLine2?: string
 
   @Column({
+    name: 'city',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -407,18 +415,21 @@ export class Customers {
   city: string
 
   @Column({
+    name: 'state',
     type: 'varchar',
     length: 50,
   })
   state?: string
 
   @Column({
+    name: 'postalCode',
     type: 'varchar',
     length: 15,
   })
   postalCode?: string
 
   @Column({
+    name: 'country',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -426,12 +437,14 @@ export class Customers {
   country: string
 
   @Column({
+    name: 'salesRepEmployeeNumber',
     type: 'int',
     width: 11,
   })
   salesRepEmployeeNumber?: number
 
   @Column({
+    name: 'creditLimit',
     type: 'decimal',
   })
   creditLimit?: number
@@ -442,6 +455,7 @@ export class Customers {
 @Entity({ name: 'employees' })
 export class Employees {
   @Column({
+    name: 'employeeNumber',
     nullable: false,
     primary: true,
     type: 'int',
@@ -450,6 +464,7 @@ export class Employees {
   employeeNumber: number
 
   @Column({
+    name: 'lastName',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -457,6 +472,7 @@ export class Employees {
   lastName: string
 
   @Column({
+    name: 'firstName',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -464,6 +480,7 @@ export class Employees {
   firstName: string
 
   @Column({
+    name: 'extension',
     nullable: false,
     type: 'varchar',
     length: 10,
@@ -471,6 +488,7 @@ export class Employees {
   extension: string
 
   @Column({
+    name: 'email',
     nullable: false,
     type: 'varchar',
     length: 100,
@@ -478,6 +496,7 @@ export class Employees {
   email: string
 
   @Column({
+    name: 'officeCode',
     nullable: false,
     type: 'varchar',
     length: 10,
@@ -485,12 +504,14 @@ export class Employees {
   officeCode: string
 
   @Column({
+    name: 'reportsTo',
     type: 'int',
     width: 11,
   })
   reportsTo?: number
 
   @Column({
+    name: 'jobTitle',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -503,11 +524,13 @@ export class Employees {
 @Entity({ name: 'family' })
 export class Family {
   @PrimaryGeneratedColumn({
+    name: 'family_id',
     type: 'int',
   })
   familyId: number
 
   @Column({
+    name: 'name',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -515,12 +538,14 @@ export class Family {
   name: string
 
   @Column({
+    name: 'phase',
     type: 'varchar',
     length: 50,
   })
   phase?: string
 
   @Column({
+    name: 'customer_id',
     comment: 'comment',
     type: 'varchar',
     length: 64,
@@ -528,6 +553,7 @@ export class Family {
   customerId?: string
 
   @Column({
+    name: 'created_at',
     nullable: false,
     default: () => 'CURRENT_TIMESTAMP',
     type: 'timestamp',
@@ -535,6 +561,7 @@ export class Family {
   createdAt?: Date
 
   @Column({
+    name: 'updated_at',
     nullable: false,
     default: () => 'CURRENT_TIMESTAMP',
     type: 'timestamp',
@@ -542,12 +569,14 @@ export class Family {
   updatedAt?: Date
 
   @Column({
+    name: 'created_by',
     type: 'varchar',
     length: 50,
   })
   createdBy?: string
 
   @Column({
+    name: 'updated_by',
     type: 'varchar',
     length: 50,
   })
@@ -559,6 +588,7 @@ export class Family {
 @Entity({ name: 'offices' })
 export class Offices {
   @Column({
+    name: 'officeCode',
     nullable: false,
     primary: true,
     type: 'varchar',
@@ -567,6 +597,7 @@ export class Offices {
   officeCode: string
 
   @Column({
+    name: 'city',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -574,6 +605,7 @@ export class Offices {
   city: string
 
   @Column({
+    name: 'phone',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -581,6 +613,7 @@ export class Offices {
   phone: string
 
   @Column({
+    name: 'addressLine1',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -588,18 +621,21 @@ export class Offices {
   addressLine1: string
 
   @Column({
+    name: 'addressLine2',
     type: 'varchar',
     length: 50,
   })
   addressLine2?: string
 
   @Column({
+    name: 'state',
     type: 'varchar',
     length: 50,
   })
   state?: string
 
   @Column({
+    name: 'country',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -607,6 +643,7 @@ export class Offices {
   country: string
 
   @Column({
+    name: 'postalCode',
     nullable: false,
     type: 'varchar',
     length: 15,
@@ -614,6 +651,7 @@ export class Offices {
   postalCode: string
 
   @Column({
+    name: 'territory',
     nullable: false,
     type: 'varchar',
     length: 10,
@@ -626,6 +664,7 @@ export class Offices {
 @Entity({ name: 'orderdetails' })
 export class Orderdetails {
   @Column({
+    name: 'orderNumber',
     nullable: false,
     primary: true,
     type: 'int',
@@ -634,6 +673,7 @@ export class Orderdetails {
   orderNumber: number
 
   @Column({
+    name: 'productCode',
     nullable: false,
     primary: true,
     type: 'varchar',
@@ -642,6 +682,7 @@ export class Orderdetails {
   productCode: string
 
   @Column({
+    name: 'quantityOrdered',
     nullable: false,
     type: 'int',
     width: 11,
@@ -649,12 +690,14 @@ export class Orderdetails {
   quantityOrdered: number
 
   @Column({
+    name: 'priceEach',
     nullable: false,
     type: 'decimal',
   })
   priceEach: number
 
   @Column({
+    name: 'orderLineNumber',
     nullable: false,
     type: 'smallint',
     width: 6,
@@ -667,6 +710,7 @@ export class Orderdetails {
 @Entity({ name: 'payments' })
 export class Payments {
   @Column({
+    name: 'customerNumber',
     nullable: false,
     primary: true,
     type: 'int',
@@ -675,6 +719,7 @@ export class Payments {
   customerNumber: number
 
   @Column({
+    name: 'checkNumber',
     nullable: false,
     primary: true,
     type: 'varchar',
@@ -683,12 +728,14 @@ export class Payments {
   checkNumber: string
 
   @Column({
+    name: 'paymentDate',
     nullable: false,
     type: 'date',
   })
   paymentDate: Date
 
   @Column({
+    name: 'amount',
     nullable: false,
     type: 'decimal',
   })
@@ -700,6 +747,7 @@ export class Payments {
 @Entity({ name: 'productlines' })
 export class Productlines {
   @Column({
+    name: 'productLine',
     nullable: false,
     primary: true,
     type: 'varchar',
@@ -708,17 +756,20 @@ export class Productlines {
   productLine: string
 
   @Column({
+    name: 'textDescription',
     type: 'varchar',
     length: 4000,
   })
   textDescription?: string
 
   @Column({
+    name: 'htmlDescription',
     type: 'mediumtext',
   })
   htmlDescription?: string
 
   @Column({
+    name: 'image',
     type: 'mediumblob',
   })
   image?: Buffer
@@ -1184,6 +1235,7 @@ Object {
 @Entity({ name: 'customers' })
 export class Customers {
   @Column({
+    name: 'customerNumber',
     nullable: false,
     primary: true,
     type: 'int',
@@ -1192,6 +1244,7 @@ export class Customers {
   customerNumber: number
 
   @Column({
+    name: 'customerName',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1199,6 +1252,7 @@ export class Customers {
   customerName: string
 
   @Column({
+    name: 'contactLastName',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1206,6 +1260,7 @@ export class Customers {
   contactLastName: string
 
   @Column({
+    name: 'contactFirstName',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1213,6 +1268,7 @@ export class Customers {
   contactFirstName: string
 
   @Column({
+    name: 'phone',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1220,6 +1276,7 @@ export class Customers {
   phone: string
 
   @Column({
+    name: 'addressLine1',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1227,12 +1284,14 @@ export class Customers {
   addressLine1: string
 
   @Column({
+    name: 'addressLine2',
     type: 'varchar',
     length: 50,
   })
   addressLine2?: string
 
   @Column({
+    name: 'city',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1240,18 +1299,21 @@ export class Customers {
   city: string
 
   @Column({
+    name: 'state',
     type: 'varchar',
     length: 50,
   })
   state?: string
 
   @Column({
+    name: 'postalCode',
     type: 'varchar',
     length: 15,
   })
   postalCode?: string
 
   @Column({
+    name: 'country',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1259,12 +1321,14 @@ export class Customers {
   country: string
 
   @Column({
+    name: 'salesRepEmployeeNumber',
     type: 'int',
     width: 11,
   })
   salesRepEmployeeNumber?: number
 
   @Column({
+    name: 'creditLimit',
     type: 'decimal',
   })
   creditLimit?: number
@@ -1275,6 +1339,7 @@ export class Customers {
 @Entity({ name: 'employees' })
 export class Employees {
   @Column({
+    name: 'employeeNumber',
     nullable: false,
     primary: true,
     type: 'int',
@@ -1283,6 +1348,7 @@ export class Employees {
   employeeNumber: number
 
   @Column({
+    name: 'lastName',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1290,6 +1356,7 @@ export class Employees {
   lastName: string
 
   @Column({
+    name: 'firstName',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1297,6 +1364,7 @@ export class Employees {
   firstName: string
 
   @Column({
+    name: 'extension',
     nullable: false,
     type: 'varchar',
     length: 10,
@@ -1304,6 +1372,7 @@ export class Employees {
   extension: string
 
   @Column({
+    name: 'email',
     nullable: false,
     type: 'varchar',
     length: 100,
@@ -1311,6 +1380,7 @@ export class Employees {
   email: string
 
   @Column({
+    name: 'officeCode',
     nullable: false,
     type: 'varchar',
     length: 10,
@@ -1318,12 +1388,14 @@ export class Employees {
   officeCode: string
 
   @Column({
+    name: 'reportsTo',
     type: 'int',
     width: 11,
   })
   reportsTo?: number
 
   @Column({
+    name: 'jobTitle',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1336,11 +1408,13 @@ export class Employees {
 @Entity({ name: 'family' })
 export class Family {
   @PrimaryGeneratedColumn({
+    name: 'family_id',
     type: 'int',
   })
   familyId: number
 
   @Column({
+    name: 'name',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1348,12 +1422,14 @@ export class Family {
   name: string
 
   @Column({
+    name: 'phase',
     type: 'varchar',
     length: 50,
   })
   phase?: string
 
   @Column({
+    name: 'customer_id',
     comment: 'comment',
     type: 'varchar',
     length: 64,
@@ -1361,6 +1437,7 @@ export class Family {
   customerId?: string
 
   @Column({
+    name: 'created_at',
     nullable: false,
     default: () => 'CURRENT_TIMESTAMP',
     type: 'timestamp',
@@ -1368,6 +1445,7 @@ export class Family {
   createdAt?: Date
 
   @Column({
+    name: 'updated_at',
     nullable: false,
     default: () => 'CURRENT_TIMESTAMP',
     type: 'timestamp',
@@ -1375,12 +1453,14 @@ export class Family {
   updatedAt?: Date
 
   @Column({
+    name: 'created_by',
     type: 'varchar',
     length: 50,
   })
   createdBy?: string
 
   @Column({
+    name: 'updated_by',
     type: 'varchar',
     length: 50,
   })
@@ -1392,6 +1472,7 @@ export class Family {
 @Entity({ name: 'offices' })
 export class Offices {
   @Column({
+    name: 'officeCode',
     nullable: false,
     primary: true,
     type: 'varchar',
@@ -1400,6 +1481,7 @@ export class Offices {
   officeCode: string
 
   @Column({
+    name: 'city',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1407,6 +1489,7 @@ export class Offices {
   city: string
 
   @Column({
+    name: 'phone',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1414,6 +1497,7 @@ export class Offices {
   phone: string
 
   @Column({
+    name: 'addressLine1',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1421,18 +1505,21 @@ export class Offices {
   addressLine1: string
 
   @Column({
+    name: 'addressLine2',
     type: 'varchar',
     length: 50,
   })
   addressLine2?: string
 
   @Column({
+    name: 'state',
     type: 'varchar',
     length: 50,
   })
   state?: string
 
   @Column({
+    name: 'country',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1440,6 +1527,7 @@ export class Offices {
   country: string
 
   @Column({
+    name: 'postalCode',
     nullable: false,
     type: 'varchar',
     length: 15,
@@ -1447,6 +1535,7 @@ export class Offices {
   postalCode: string
 
   @Column({
+    name: 'territory',
     nullable: false,
     type: 'varchar',
     length: 10,
@@ -1459,6 +1548,7 @@ export class Offices {
 @Entity({ name: 'orderdetails' })
 export class Orderdetails {
   @Column({
+    name: 'orderNumber',
     nullable: false,
     primary: true,
     type: 'int',
@@ -1467,6 +1557,7 @@ export class Orderdetails {
   orderNumber: number
 
   @Column({
+    name: 'productCode',
     nullable: false,
     primary: true,
     type: 'varchar',
@@ -1475,6 +1566,7 @@ export class Orderdetails {
   productCode: string
 
   @Column({
+    name: 'quantityOrdered',
     nullable: false,
     type: 'int',
     width: 11,
@@ -1482,12 +1574,14 @@ export class Orderdetails {
   quantityOrdered: number
 
   @Column({
+    name: 'priceEach',
     nullable: false,
     type: 'decimal',
   })
   priceEach: number
 
   @Column({
+    name: 'orderLineNumber',
     nullable: false,
     type: 'smallint',
     width: 6,
@@ -1500,6 +1594,7 @@ export class Orderdetails {
 @Entity({ name: 'orders' })
 export class Orders {
   @Column({
+    name: 'orderNumber',
     nullable: false,
     primary: true,
     type: 'int',
@@ -1508,23 +1603,27 @@ export class Orders {
   orderNumber: number
 
   @Column({
+    name: 'orderDate',
     nullable: false,
     type: 'date',
   })
   orderDate: Date
 
   @Column({
+    name: 'requiredDate',
     nullable: false,
     type: 'date',
   })
   requiredDate: Date
 
   @Column({
+    name: 'shippedDate',
     type: 'date',
   })
   shippedDate?: Date
 
   @Column({
+    name: 'status',
     nullable: false,
     type: 'varchar',
     length: 15,
@@ -1532,11 +1631,13 @@ export class Orders {
   status: string
 
   @Column({
+    name: 'comments',
     type: 'text',
   })
   comments?: string
 
   @Column({
+    name: 'customerNumber',
     nullable: false,
     type: 'int',
     width: 11,
@@ -1549,6 +1650,7 @@ export class Orders {
 @Entity({ name: 'payments' })
 export class Payments {
   @Column({
+    name: 'customerNumber',
     nullable: false,
     primary: true,
     type: 'int',
@@ -1557,6 +1659,7 @@ export class Payments {
   customerNumber: number
 
   @Column({
+    name: 'checkNumber',
     nullable: false,
     primary: true,
     type: 'varchar',
@@ -1565,12 +1668,14 @@ export class Payments {
   checkNumber: string
 
   @Column({
+    name: 'paymentDate',
     nullable: false,
     type: 'date',
   })
   paymentDate: Date
 
   @Column({
+    name: 'amount',
     nullable: false,
     type: 'decimal',
   })
@@ -1582,6 +1687,7 @@ export class Payments {
 @Entity({ name: 'productlines' })
 export class Productlines {
   @Column({
+    name: 'productLine',
     nullable: false,
     primary: true,
     type: 'varchar',
@@ -1590,17 +1696,20 @@ export class Productlines {
   productLine: string
 
   @Column({
+    name: 'textDescription',
     type: 'varchar',
     length: 4000,
   })
   textDescription?: string
 
   @Column({
+    name: 'htmlDescription',
     type: 'mediumtext',
   })
   htmlDescription?: string
 
   @Column({
+    name: 'image',
     type: 'mediumblob',
   })
   image?: Buffer
@@ -1611,6 +1720,7 @@ export class Productlines {
 @Entity({ name: 'products' })
 export class Products {
   @Column({
+    name: 'productCode',
     nullable: false,
     primary: true,
     type: 'varchar',
@@ -1619,6 +1729,7 @@ export class Products {
   productCode: string
 
   @Column({
+    name: 'productName',
     nullable: false,
     type: 'varchar',
     length: 70,
@@ -1626,6 +1737,7 @@ export class Products {
   productName: string
 
   @Column({
+    name: 'productLine',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1633,6 +1745,7 @@ export class Products {
   productLine: string
 
   @Column({
+    name: 'productScale',
     nullable: false,
     type: 'varchar',
     length: 10,
@@ -1640,6 +1753,7 @@ export class Products {
   productScale: string
 
   @Column({
+    name: 'productVendor',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1647,12 +1761,14 @@ export class Products {
   productVendor: string
 
   @Column({
+    name: 'productDescription',
     nullable: false,
     type: 'text',
   })
   productDescription: string
 
   @Column({
+    name: 'quantityInStock',
     nullable: false,
     type: 'smallint',
     width: 6,
@@ -1660,12 +1776,14 @@ export class Products {
   quantityInStock: number
 
   @Column({
+    name: 'buyPrice',
     nullable: false,
     type: 'decimal',
   })
   buyPrice: number
 
   @Column({
+    name: 'MSRP',
     nullable: false,
     type: 'decimal',
   })
@@ -1793,6 +1911,7 @@ Object {
 @Entity({ name: 'orders' })
 export class Orders {
   @Column({
+    name: 'orderNumber',
     nullable: false,
     primary: true,
     type: 'int',
@@ -1801,23 +1920,27 @@ export class Orders {
   orderNumber: number
 
   @Column({
+    name: 'orderDate',
     nullable: false,
     type: 'date',
   })
   orderDate: Date
 
   @Column({
+    name: 'requiredDate',
     nullable: false,
     type: 'date',
   })
   requiredDate: Date
 
   @Column({
+    name: 'shippedDate',
     type: 'date',
   })
   shippedDate?: Date
 
   @Column({
+    name: 'status',
     nullable: false,
     type: 'varchar',
     length: 15,
@@ -1825,11 +1948,13 @@ export class Orders {
   status: string
 
   @Column({
+    name: 'comments',
     type: 'text',
   })
   comments?: string
 
   @Column({
+    name: 'customerNumber',
     nullable: false,
     type: 'int',
     width: 11,
@@ -1842,6 +1967,7 @@ export class Orders {
 @Entity({ name: 'products' })
 export class Products {
   @Column({
+    name: 'productCode',
     nullable: false,
     primary: true,
     type: 'varchar',
@@ -1850,6 +1976,7 @@ export class Products {
   productCode: string
 
   @Column({
+    name: 'productName',
     nullable: false,
     type: 'varchar',
     length: 70,
@@ -1857,6 +1984,7 @@ export class Products {
   productName: string
 
   @Column({
+    name: 'productLine',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1864,6 +1992,7 @@ export class Products {
   productLine: string
 
   @Column({
+    name: 'productScale',
     nullable: false,
     type: 'varchar',
     length: 10,
@@ -1871,6 +2000,7 @@ export class Products {
   productScale: string
 
   @Column({
+    name: 'productVendor',
     nullable: false,
     type: 'varchar',
     length: 50,
@@ -1878,12 +2008,14 @@ export class Products {
   productVendor: string
 
   @Column({
+    name: 'productDescription',
     nullable: false,
     type: 'text',
   })
   productDescription: string
 
   @Column({
+    name: 'quantityInStock',
     nullable: false,
     type: 'smallint',
     width: 6,
@@ -1891,12 +2023,14 @@ export class Products {
   quantityInStock: number
 
   @Column({
+    name: 'buyPrice',
     nullable: false,
     type: 'decimal',
   })
   buyPrice: number
 
   @Column({
+    name: 'MSRP',
     nullable: false,
     type: 'decimal',
   })
@@ -2280,59 +2414,77 @@ Object {
 @Entity({ name: 'customers' })
 export class Customers {
   @Column({
+    name: 'customerNumber',
     nullable: false,
     primary: true,
   })
   customerNumber: number
 
   @Column({
+    name: 'customerName',
     nullable: false,
   })
   customerName: string
 
   @Column({
+    name: 'contactLastName',
     nullable: false,
   })
   contactLastName: string
 
   @Column({
+    name: 'contactFirstName',
     nullable: false,
   })
   contactFirstName: string
 
   @Column({
+    name: 'phone',
     nullable: false,
   })
   phone: string
 
   @Column({
+    name: 'addressLine1',
     nullable: false,
   })
   addressLine1: string
 
-  @Column()
+  @Column({
+    name: 'addressLine2',
+  })
   addressLine2?: string
 
   @Column({
+    name: 'city',
     nullable: false,
   })
   city: string
 
-  @Column()
+  @Column({
+    name: 'state',
+  })
   state?: string
 
-  @Column()
+  @Column({
+    name: 'postalCode',
+  })
   postalCode?: string
 
   @Column({
+    name: 'country',
     nullable: false,
   })
   country: string
 
-  @Column()
+  @Column({
+    name: 'salesRepEmployeeNumber',
+  })
   salesRepEmployeeNumber?: number
 
-  @Column()
+  @Column({
+    name: 'creditLimit',
+  })
   creditLimit?: number
 }
 ",
@@ -2341,40 +2493,49 @@ export class Customers {
 @Entity({ name: 'employees' })
 export class Employees {
   @Column({
+    name: 'employeeNumber',
     nullable: false,
     primary: true,
   })
   employeeNumber: number
 
   @Column({
+    name: 'lastName',
     nullable: false,
   })
   lastName: string
 
   @Column({
+    name: 'firstName',
     nullable: false,
   })
   firstName: string
 
   @Column({
+    name: 'extension',
     nullable: false,
   })
   extension: string
 
   @Column({
+    name: 'email',
     nullable: false,
   })
   email: string
 
   @Column({
+    name: 'officeCode',
     nullable: false,
   })
   officeCode: string
 
-  @Column()
+  @Column({
+    name: 'reportsTo',
+  })
   reportsTo?: number
 
   @Column({
+    name: 'jobTitle',
     nullable: false,
   })
   jobTitle: string
@@ -2385,38 +2546,49 @@ export class Employees {
 @Entity({ name: 'family' })
 export class Family {
   @PrimaryGeneratedColumn({
+    name: 'family_id',
   })
   familyId: number
 
   @Column({
+    name: 'name',
     nullable: false,
   })
   name: string
 
-  @Column()
+  @Column({
+    name: 'phase',
+  })
   phase?: string
 
   @Column({
+    name: 'customer_id',
     comment: 'comment',
   })
   customerId?: string
 
   @Column({
+    name: 'created_at',
     nullable: false,
     default: () => 'CURRENT_TIMESTAMP',
   })
   createdAt?: Date
 
   @Column({
+    name: 'updated_at',
     nullable: false,
     default: () => 'CURRENT_TIMESTAMP',
   })
   updatedAt?: Date
 
-  @Column()
+  @Column({
+    name: 'created_by',
+  })
   createdBy?: string
 
-  @Column()
+  @Column({
+    name: 'updated_by',
+  })
   updatedBy?: string
 }
 ",
@@ -2425,43 +2597,54 @@ export class Family {
 @Entity({ name: 'offices' })
 export class Offices {
   @Column({
+    name: 'officeCode',
     nullable: false,
     primary: true,
   })
   officeCode: string
 
   @Column({
+    name: 'city',
     nullable: false,
   })
   city: string
 
   @Column({
+    name: 'phone',
     nullable: false,
   })
   phone: string
 
   @Column({
+    name: 'addressLine1',
     nullable: false,
   })
   addressLine1: string
 
-  @Column()
+  @Column({
+    name: 'addressLine2',
+  })
   addressLine2?: string
 
-  @Column()
+  @Column({
+    name: 'state',
+  })
   state?: string
 
   @Column({
+    name: 'country',
     nullable: false,
   })
   country: string
 
   @Column({
+    name: 'postalCode',
     nullable: false,
   })
   postalCode: string
 
   @Column({
+    name: 'territory',
     nullable: false,
   })
   territory: string
@@ -2472,28 +2655,33 @@ export class Offices {
 @Entity({ name: 'orderdetails' })
 export class Orderdetails {
   @Column({
+    name: 'orderNumber',
     nullable: false,
     primary: true,
   })
   orderNumber: number
 
   @Column({
+    name: 'productCode',
     nullable: false,
     primary: true,
   })
   productCode: string
 
   @Column({
+    name: 'quantityOrdered',
     nullable: false,
   })
   quantityOrdered: number
 
   @Column({
+    name: 'priceEach',
     nullable: false,
   })
   priceEach: number
 
   @Column({
+    name: 'orderLineNumber',
     nullable: false,
   })
   orderLineNumber: number
@@ -2504,33 +2692,42 @@ export class Orderdetails {
 @Entity({ name: 'orders' })
 export class Orders {
   @Column({
+    name: 'orderNumber',
     nullable: false,
     primary: true,
   })
   orderNumber: number
 
   @Column({
+    name: 'orderDate',
     nullable: false,
   })
   orderDate: Date
 
   @Column({
+    name: 'requiredDate',
     nullable: false,
   })
   requiredDate: Date
 
-  @Column()
+  @Column({
+    name: 'shippedDate',
+  })
   shippedDate?: Date
 
   @Column({
+    name: 'status',
     nullable: false,
   })
   status: string
 
-  @Column()
+  @Column({
+    name: 'comments',
+  })
   comments?: string
 
   @Column({
+    name: 'customerNumber',
     nullable: false,
   })
   customerNumber: number
@@ -2541,23 +2738,27 @@ export class Orders {
 @Entity({ name: 'payments' })
 export class Payments {
   @Column({
+    name: 'customerNumber',
     nullable: false,
     primary: true,
   })
   customerNumber: number
 
   @Column({
+    name: 'checkNumber',
     nullable: false,
     primary: true,
   })
   checkNumber: string
 
   @Column({
+    name: 'paymentDate',
     nullable: false,
   })
   paymentDate: Date
 
   @Column({
+    name: 'amount',
     nullable: false,
   })
   amount: number
@@ -2568,18 +2769,25 @@ export class Payments {
 @Entity({ name: 'productlines' })
 export class Productlines {
   @Column({
+    name: 'productLine',
     nullable: false,
     primary: true,
   })
   productLine: string
 
-  @Column()
+  @Column({
+    name: 'textDescription',
+  })
   textDescription?: string
 
-  @Column()
+  @Column({
+    name: 'htmlDescription',
+  })
   htmlDescription?: string
 
-  @Column()
+  @Column({
+    name: 'image',
+  })
   image?: Buffer
 }
 ",
@@ -2588,47 +2796,56 @@ export class Productlines {
 @Entity({ name: 'products' })
 export class Products {
   @Column({
+    name: 'productCode',
     nullable: false,
     primary: true,
   })
   productCode: string
 
   @Column({
+    name: 'productName',
     nullable: false,
   })
   productName: string
 
   @Column({
+    name: 'productLine',
     nullable: false,
   })
   productLine: string
 
   @Column({
+    name: 'productScale',
     nullable: false,
   })
   productScale: string
 
   @Column({
+    name: 'productVendor',
     nullable: false,
   })
   productVendor: string
 
   @Column({
+    name: 'productDescription',
     nullable: false,
   })
   productDescription: string
 
   @Column({
+    name: 'quantityInStock',
     nullable: false,
   })
   quantityInStock: number
 
   @Column({
+    name: 'buyPrice',
     nullable: false,
   })
   buyPrice: number
 
   @Column({
+    name: 'MSRP',
     nullable: false,
   })
   msrp: number
