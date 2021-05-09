@@ -31,7 +31,7 @@
     "@types/node": "^13.7.1",
     "husky": "^4.2.3",
     "jest": "^26.0.0",
-    "lint-staged": "^10.0.7",
+    "lint-staged": "^11.0.0",
     "prettier": "^2.0.0",
     "sequelize-typescript": "^1.1.0",
     "ts-jest": "^26.0.0",
