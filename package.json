@@ -28,7 +28,7 @@
     "@types/jest": "^26.0.0",
     "@types/lodash": "^4.14.149",
     "@types/mkdirp": "^1.0.0",
-    "@types/node": "^13.7.1",
+    "@types/node": "^14.0.0",
     "husky": "^4.2.3",
     "jest": "^26.0.0",
     "lint-staged": "^10.0.7",
