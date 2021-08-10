@@ -1,7 +1,8 @@
 import * as fs from 'fs'
-import { isNull } from 'util'
 import * as _ from 'lodash'
 import { IndentManager } from './im'
+
+const isNull = (input: any) => input === null
 
 const typeWithLength = (
   type: string,

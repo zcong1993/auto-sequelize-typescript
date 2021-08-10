@@ -88,7 +88,7 @@ const getColumType = (t: string): object => {
   if (tt.match(/^(smallint|mediumint|tinyint|int)/)) {
     const length = getLength(tt)
     const res: any = { type }
-    if (length !== null) {
+    if (!!length) {
       res.width = `${length}`.replace(/\(|\)/g, '')
     }
     if (tt.match(/unsigned/i)) {

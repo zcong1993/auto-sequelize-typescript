@@ -355,7 +355,6 @@ export class Customers {
     nullable: false,
     primary: true,
     type: 'int',
-    width: undefined,
   })
   customerNumber: number
 
@@ -439,7 +438,6 @@ export class Customers {
   @Column({
     name: 'salesRepEmployeeNumber',
     type: 'int',
-    width: undefined,
   })
   salesRepEmployeeNumber?: number
 
@@ -459,7 +457,6 @@ export class Employees {
     nullable: false,
     primary: true,
     type: 'int',
-    width: undefined,
   })
   employeeNumber: number
 
@@ -506,7 +503,6 @@ export class Employees {
   @Column({
     name: 'reportsTo',
     type: 'int',
-    width: undefined,
   })
   reportsTo?: number
 
@@ -668,7 +664,6 @@ export class Orderdetails {
     nullable: false,
     primary: true,
     type: 'int',
-    width: undefined,
   })
   orderNumber: number
 
@@ -685,7 +680,6 @@ export class Orderdetails {
     name: 'quantityOrdered',
     nullable: false,
     type: 'int',
-    width: undefined,
   })
   quantityOrdered: number
 
@@ -700,7 +694,6 @@ export class Orderdetails {
     name: 'orderLineNumber',
     nullable: false,
     type: 'smallint',
-    width: undefined,
   })
   orderLineNumber: number
 }
@@ -714,7 +707,6 @@ export class Payments {
     nullable: false,
     primary: true,
     type: 'int',
-    width: undefined,
   })
   customerNumber: number
 
@@ -1239,7 +1231,6 @@ export class Customers {
     nullable: false,
     primary: true,
     type: 'int',
-    width: undefined,
   })
   customerNumber: number
 
@@ -1323,7 +1314,6 @@ export class Customers {
   @Column({
     name: 'salesRepEmployeeNumber',
     type: 'int',
-    width: undefined,
   })
   salesRepEmployeeNumber?: number
 
@@ -1343,7 +1333,6 @@ export class Employees {
     nullable: false,
     primary: true,
     type: 'int',
-    width: undefined,
   })
   employeeNumber: number
 
@@ -1390,7 +1379,6 @@ export class Employees {
   @Column({
     name: 'reportsTo',
     type: 'int',
-    width: undefined,
   })
   reportsTo?: number
 
@@ -1552,7 +1540,6 @@ export class Orderdetails {
     nullable: false,
     primary: true,
     type: 'int',
-    width: undefined,
   })
   orderNumber: number
 
@@ -1569,7 +1556,6 @@ export class Orderdetails {
     name: 'quantityOrdered',
     nullable: false,
     type: 'int',
-    width: undefined,
   })
   quantityOrdered: number
 
@@ -1584,7 +1570,6 @@ export class Orderdetails {
     name: 'orderLineNumber',
     nullable: false,
     type: 'smallint',
-    width: undefined,
   })
   orderLineNumber: number
 }
@@ -1598,7 +1583,6 @@ export class Orders {
     nullable: false,
     primary: true,
     type: 'int',
-    width: undefined,
   })
   orderNumber: number
 
@@ -1640,7 +1624,6 @@ export class Orders {
     name: 'customerNumber',
     nullable: false,
     type: 'int',
-    width: undefined,
   })
   customerNumber: number
 }
@@ -1654,7 +1637,6 @@ export class Payments {
     nullable: false,
     primary: true,
     type: 'int',
-    width: undefined,
   })
   customerNumber: number
 
@@ -1771,7 +1753,6 @@ export class Products {
     name: 'quantityInStock',
     nullable: false,
     type: 'smallint',
-    width: undefined,
   })
   quantityInStock: number
 
@@ -1915,7 +1896,6 @@ export class Orders {
     nullable: false,
     primary: true,
     type: 'int',
-    width: undefined,
   })
   orderNumber: number
 
@@ -1957,7 +1937,6 @@ export class Orders {
     name: 'customerNumber',
     nullable: false,
     type: 'int',
-    width: undefined,
   })
   customerNumber: number
 }
@@ -2018,7 +1997,6 @@ export class Products {
     name: 'quantityInStock',
     nullable: false,
     type: 'smallint',
-    width: undefined,
   })
   quantityInStock: number
 
