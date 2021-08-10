@@ -1,6 +1,6 @@
 # auto-sequelize-typescript
 
-[![NPM version](https://img.shields.io/npm/v/@zcong/auto-sequelize-typescript.svg?style=flat)](https://npmjs.com/package/@zcong/auto-sequelize-typescript) [![NPM downloads](https://img.shields.io/npm/dm/@zcong/auto-sequelize-typescript.svg?style=flat)](https://npmjs.com/package/@zcong/auto-sequelize-typescript) [![CircleCI](https://circleci.com/gh/zcong1993/auto-sequelize-typescript/tree/master.svg?style=shield)](https://circleci.com/gh/zcong1993/auto-sequelize-typescript/tree/master) [![codecov](https://codecov.io/gh/zcong1993/auto-sequelize-typescript/branch/master/graph/badge.svg)](https://codecov.io/gh/zcong1993/auto-sequelize-typescript)
+[![NPM version](https://img.shields.io/npm/v/@zcong/auto-sequelize-typescript.svg?style=flat)](https://npmjs.com/package/@zcong/auto-sequelize-typescript) [![NPM downloads](https://img.shields.io/npm/dm/@zcong/auto-sequelize-typescript.svg?style=flat)](https://npmjs.com/package/@zcong/auto-sequelize-typescript) [![JS Test](https://github.com/zcong1993/auto-sequelize-typescript/actions/workflows/js-test.yml/badge.svg)](https://github.com/zcong1993/auto-sequelize-typescript/actions/workflows/js-test.yml) [![codecov](https://codecov.io/gh/zcong1993/auto-sequelize-typescript/branch/master/graph/badge.svg)](https://codecov.io/gh/zcong1993/auto-sequelize-typescript)
 
 > generate sequelize typescript model from exists db schema
 
