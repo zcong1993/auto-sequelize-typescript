@@ -1,4 +1,3 @@
-import { isNull } from 'util'
 import { Sequelize } from 'sequelize'
 import * as camelcase from 'camelcase'
 import * as _ from 'lodash'
@@ -89,7 +88,7 @@ const getColumType = (t: string): object => {
   if (tt.match(/^(smallint|mediumint|tinyint|int)/)) {
     const length = getLength(tt)
     const res: any = { type }
-    if (!isNull(length)) {
+    if (length !== null) {
       res.width = `${length}`.replace(/\(|\)/g, '')
     }
     if (tt.match(/unsigned/i)) {
@@ -222,7 +221,7 @@ const generateText = (
     const column = schema[key]
     const tt = getType(column.type)
     let colOpt = getColumnOptions(column)
-    const required = !column.allowNull && !colOpt.defaultValue
+    const required = !column.allowNull || !!colOpt?.defaultValue
 
     let colStr: string
 

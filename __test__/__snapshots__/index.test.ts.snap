@@ -9,7 +9,7 @@ export default class Customers extends Model<Customers> {
   @Column({
     allowNull: false,
     primaryKey: true,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   customerNumber: number
 
@@ -71,7 +71,7 @@ export default class Customers extends Model<Customers> {
   country: string
 
   @Column({
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   salesRepEmployeeNumber?: number
 
@@ -88,7 +88,7 @@ export default class Employees extends Model<Employees> {
   @Column({
     allowNull: false,
     primaryKey: true,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   employeeNumber: number
 
@@ -123,7 +123,7 @@ export default class Employees extends Model<Employees> {
   officeCode: string
 
   @Column({
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   reportsTo?: number
 
@@ -142,7 +142,7 @@ export default class Family extends Model<Family> {
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   familyId: number
 
@@ -253,7 +253,7 @@ export default class Orderdetails extends Model<Orderdetails> {
   @Column({
     allowNull: false,
     primaryKey: true,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   orderNumber: number
 
@@ -266,7 +266,7 @@ export default class Orderdetails extends Model<Orderdetails> {
 
   @Column({
     allowNull: false,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   quantityOrdered: number
 
@@ -278,7 +278,7 @@ export default class Orderdetails extends Model<Orderdetails> {
 
   @Column({
     allowNull: false,
-    type: DataType.INTEGER({ length: 6 }),
+    type: DataType.INTEGER,
   })
   orderLineNumber: number
 }
@@ -290,7 +290,7 @@ export default class Payments extends Model<Payments> {
   @Column({
     allowNull: false,
     primaryKey: true,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   customerNumber: number
 
@@ -355,7 +355,7 @@ export class Customers {
     nullable: false,
     primary: true,
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   customerNumber: number
 
@@ -439,7 +439,7 @@ export class Customers {
   @Column({
     name: 'salesRepEmployeeNumber',
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   salesRepEmployeeNumber?: number
 
@@ -459,7 +459,7 @@ export class Employees {
     nullable: false,
     primary: true,
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   employeeNumber: number
 
@@ -506,7 +506,7 @@ export class Employees {
   @Column({
     name: 'reportsTo',
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   reportsTo?: number
 
@@ -558,7 +558,7 @@ export class Family {
     default: () => 'CURRENT_TIMESTAMP',
     type: 'timestamp',
   })
-  createdAt?: Date
+  createdAt: Date
 
   @Column({
     name: 'updated_at',
@@ -566,7 +566,7 @@ export class Family {
     default: () => 'CURRENT_TIMESTAMP',
     type: 'timestamp',
   })
-  updatedAt?: Date
+  updatedAt: Date
 
   @Column({
     name: 'created_by',
@@ -668,7 +668,7 @@ export class Orderdetails {
     nullable: false,
     primary: true,
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   orderNumber: number
 
@@ -685,7 +685,7 @@ export class Orderdetails {
     name: 'quantityOrdered',
     nullable: false,
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   quantityOrdered: number
 
@@ -700,7 +700,7 @@ export class Orderdetails {
     name: 'orderLineNumber',
     nullable: false,
     type: 'smallint',
-    width: 6,
+    width: undefined,
   })
   orderLineNumber: number
 }
@@ -714,7 +714,7 @@ export class Payments {
     nullable: false,
     primary: true,
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   customerNumber: number
 
@@ -787,7 +787,7 @@ export default class Customers extends Model<Customers> {
   @Column({
     allowNull: false,
     primaryKey: true,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   customerNumber: number
 
@@ -849,7 +849,7 @@ export default class Customers extends Model<Customers> {
   country: string
 
   @Column({
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   salesRepEmployeeNumber?: number
 
@@ -866,7 +866,7 @@ export default class Employees extends Model<Employees> {
   @Column({
     allowNull: false,
     primaryKey: true,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   employeeNumber: number
 
@@ -901,7 +901,7 @@ export default class Employees extends Model<Employees> {
   officeCode: string
 
   @Column({
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   reportsTo?: number
 
@@ -920,7 +920,7 @@ export default class Family extends Model<Family> {
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   familyId: number
 
@@ -1031,7 +1031,7 @@ export default class Orderdetails extends Model<Orderdetails> {
   @Column({
     allowNull: false,
     primaryKey: true,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   orderNumber: number
 
@@ -1044,7 +1044,7 @@ export default class Orderdetails extends Model<Orderdetails> {
 
   @Column({
     allowNull: false,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   quantityOrdered: number
 
@@ -1056,7 +1056,7 @@ export default class Orderdetails extends Model<Orderdetails> {
 
   @Column({
     allowNull: false,
-    type: DataType.INTEGER({ length: 6 }),
+    type: DataType.INTEGER,
   })
   orderLineNumber: number
 }
@@ -1068,7 +1068,7 @@ export default class Orders extends Model<Orders> {
   @Column({
     allowNull: false,
     primaryKey: true,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   orderNumber: number
 
@@ -1102,7 +1102,7 @@ export default class Orders extends Model<Orders> {
 
   @Column({
     allowNull: false,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   customerNumber: number
 }
@@ -1114,7 +1114,7 @@ export default class Payments extends Model<Payments> {
   @Column({
     allowNull: false,
     primaryKey: true,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   customerNumber: number
 
@@ -1208,7 +1208,7 @@ export default class Products extends Model<Products> {
 
   @Column({
     allowNull: false,
-    type: DataType.INTEGER({ length: 6 }),
+    type: DataType.INTEGER,
   })
   quantityInStock: number
 
@@ -1239,7 +1239,7 @@ export class Customers {
     nullable: false,
     primary: true,
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   customerNumber: number
 
@@ -1323,7 +1323,7 @@ export class Customers {
   @Column({
     name: 'salesRepEmployeeNumber',
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   salesRepEmployeeNumber?: number
 
@@ -1343,7 +1343,7 @@ export class Employees {
     nullable: false,
     primary: true,
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   employeeNumber: number
 
@@ -1390,7 +1390,7 @@ export class Employees {
   @Column({
     name: 'reportsTo',
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   reportsTo?: number
 
@@ -1442,7 +1442,7 @@ export class Family {
     default: () => 'CURRENT_TIMESTAMP',
     type: 'timestamp',
   })
-  createdAt?: Date
+  createdAt: Date
 
   @Column({
     name: 'updated_at',
@@ -1450,7 +1450,7 @@ export class Family {
     default: () => 'CURRENT_TIMESTAMP',
     type: 'timestamp',
   })
-  updatedAt?: Date
+  updatedAt: Date
 
   @Column({
     name: 'created_by',
@@ -1552,7 +1552,7 @@ export class Orderdetails {
     nullable: false,
     primary: true,
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   orderNumber: number
 
@@ -1569,7 +1569,7 @@ export class Orderdetails {
     name: 'quantityOrdered',
     nullable: false,
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   quantityOrdered: number
 
@@ -1584,7 +1584,7 @@ export class Orderdetails {
     name: 'orderLineNumber',
     nullable: false,
     type: 'smallint',
-    width: 6,
+    width: undefined,
   })
   orderLineNumber: number
 }
@@ -1598,7 +1598,7 @@ export class Orders {
     nullable: false,
     primary: true,
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   orderNumber: number
 
@@ -1640,7 +1640,7 @@ export class Orders {
     name: 'customerNumber',
     nullable: false,
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   customerNumber: number
 }
@@ -1654,7 +1654,7 @@ export class Payments {
     nullable: false,
     primary: true,
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   customerNumber: number
 
@@ -1771,7 +1771,7 @@ export class Products {
     name: 'quantityInStock',
     nullable: false,
     type: 'smallint',
-    width: 6,
+    width: undefined,
   })
   quantityInStock: number
 
@@ -1802,7 +1802,7 @@ export default class Orders extends Model<Orders> {
   @Column({
     allowNull: false,
     primaryKey: true,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   orderNumber: number
 
@@ -1836,7 +1836,7 @@ export default class Orders extends Model<Orders> {
 
   @Column({
     allowNull: false,
-    type: DataType.INTEGER({ length: 11 }),
+    type: DataType.INTEGER,
   })
   customerNumber: number
 }
@@ -1884,7 +1884,7 @@ export default class Products extends Model<Products> {
 
   @Column({
     allowNull: false,
-    type: DataType.INTEGER({ length: 6 }),
+    type: DataType.INTEGER,
   })
   quantityInStock: number
 
@@ -1915,7 +1915,7 @@ export class Orders {
     nullable: false,
     primary: true,
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   orderNumber: number
 
@@ -1957,7 +1957,7 @@ export class Orders {
     name: 'customerNumber',
     nullable: false,
     type: 'int',
-    width: 11,
+    width: undefined,
   })
   customerNumber: number
 }
@@ -2018,7 +2018,7 @@ export class Products {
     name: 'quantityInStock',
     nullable: false,
     type: 'smallint',
-    width: 6,
+    width: undefined,
   })
   quantityInStock: number
 
@@ -2572,14 +2572,14 @@ export class Family {
     nullable: false,
     default: () => 'CURRENT_TIMESTAMP',
   })
-  createdAt?: Date
+  createdAt: Date
 
   @Column({
     name: 'updated_at',
     nullable: false,
     default: () => 'CURRENT_TIMESTAMP',
   })
-  updatedAt?: Date
+  updatedAt: Date
 
   @Column({
     name: 'created_by',
