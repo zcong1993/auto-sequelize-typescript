@@ -26,10 +26,6 @@ jobs:
         - 3306:3306
     steps:
       - uses: actions/checkout@v2
-      - name: Setup dockerize
-        uses: zcong1993/setup-dockerize@v1.1.0
-        with:
-          dockerize-version: '0.6.1'
       - uses: actions/setup-node@v2
         with:
           # registry-url: "https://registry.npmjs.org"
@@ -39,7 +35,6 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Prepare mysql
         run: |
-          dockerize -wait tcp://localhost:3306 -timeout 1m
           mysql -h 127.0.0.1 -u root -proot sample < __test__/sample.sql
       - name: run test
         run: yarn test:cov
