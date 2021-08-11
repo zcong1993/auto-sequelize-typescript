@@ -5,7 +5,7 @@ Object {
   "./null/customers.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'customers' })
-export default class Customers extends Model<Customers> {
+export default class Customers extends Model<Customers, Partial<Customers>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -84,7 +84,7 @@ export default class Customers extends Model<Customers> {
   "./null/employees.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'employees' })
-export default class Employees extends Model<Employees> {
+export default class Employees extends Model<Employees, Partial<Employees>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -137,7 +137,7 @@ export default class Employees extends Model<Employees> {
   "./null/family.ts": "import { Model, Column, Table, DataType, Sequelize } from 'sequelize-typescript'
 
 @Table({ tableName: 'family' })
-export default class Family extends Model<Family> {
+export default class Family extends Model<Family, Partial<Family>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -191,7 +191,7 @@ export default class Family extends Model<Family> {
   "./null/offices.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'offices' })
-export default class Offices extends Model<Offices> {
+export default class Offices extends Model<Offices, Partial<Offices>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -249,7 +249,7 @@ export default class Offices extends Model<Offices> {
   "./null/orderdetails.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'orderdetails' })
-export default class Orderdetails extends Model<Orderdetails> {
+export default class Orderdetails extends Model<Orderdetails, Partial<Orderdetails>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -286,7 +286,7 @@ export default class Orderdetails extends Model<Orderdetails> {
   "./null/payments.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'payments' })
-export default class Payments extends Model<Payments> {
+export default class Payments extends Model<Payments, Partial<Payments>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -317,7 +317,7 @@ export default class Payments extends Model<Payments> {
   "./null/productlines.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'productlines' })
-export default class Productlines extends Model<Productlines> {
+export default class Productlines extends Model<Productlines, Partial<Productlines>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -349,7 +349,7 @@ Object {
   "./null/customers.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'customers' })
-export default class Customers extends Model<Customers> {
+export default class Customers extends Model<Customers, Partial<Customers>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -428,7 +428,7 @@ export default class Customers extends Model<Customers> {
   "./null/employees.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'employees' })
-export default class Employees extends Model<Employees> {
+export default class Employees extends Model<Employees, Partial<Employees>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -481,7 +481,7 @@ export default class Employees extends Model<Employees> {
   "./null/family.ts": "import { Model, Column, Table, DataType, Sequelize } from 'sequelize-typescript'
 
 @Table({ tableName: 'family' })
-export default class Family extends Model<Family> {
+export default class Family extends Model<Family, Partial<Family>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -535,7 +535,7 @@ export default class Family extends Model<Family> {
   "./null/offices.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'offices' })
-export default class Offices extends Model<Offices> {
+export default class Offices extends Model<Offices, Partial<Offices>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -593,7 +593,7 @@ export default class Offices extends Model<Offices> {
   "./null/orderdetails.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'orderdetails' })
-export default class Orderdetails extends Model<Orderdetails> {
+export default class Orderdetails extends Model<Orderdetails, Partial<Orderdetails>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -630,7 +630,7 @@ export default class Orderdetails extends Model<Orderdetails> {
   "./null/orders.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'orders' })
-export default class Orders extends Model<Orders> {
+export default class Orders extends Model<Orders, Partial<Orders>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -676,7 +676,7 @@ export default class Orders extends Model<Orders> {
   "./null/payments.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'payments' })
-export default class Payments extends Model<Payments> {
+export default class Payments extends Model<Payments, Partial<Payments>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -707,7 +707,7 @@ export default class Payments extends Model<Payments> {
   "./null/productlines.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'productlines' })
-export default class Productlines extends Model<Productlines> {
+export default class Productlines extends Model<Productlines, Partial<Productlines>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -734,7 +734,7 @@ export default class Productlines extends Model<Productlines> {
   "./null/products.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'products' })
-export default class Products extends Model<Products> {
+export default class Products extends Model<Products, Partial<Products>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -799,7 +799,7 @@ Object {
   "./null/orders.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'orders' })
-export default class Orders extends Model<Orders> {
+export default class Orders extends Model<Orders, Partial<Orders>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -845,7 +845,7 @@ export default class Orders extends Model<Orders> {
   "./null/products.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'products' })
-export default class Products extends Model<Products> {
+export default class Products extends Model<Products, Partial<Products>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -910,7 +910,7 @@ Object {
   "./null/customers.ts": "import { Model, Column, Table } from 'sequelize-typescript'
 
 @Table({ tableName: 'customers' })
-export default class Customers extends Model<Customers> {
+export default class Customers extends Model<Customers, Partial<Customers>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -971,7 +971,7 @@ export default class Customers extends Model<Customers> {
   "./null/employees.ts": "import { Model, Column, Table } from 'sequelize-typescript'
 
 @Table({ tableName: 'employees' })
-export default class Employees extends Model<Employees> {
+export default class Employees extends Model<Employees, Partial<Employees>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -1015,7 +1015,7 @@ export default class Employees extends Model<Employees> {
   "./null/family.ts": "import { Model, Column, Table, Sequelize } from 'sequelize-typescript'
 
 @Table({ tableName: 'family' })
-export default class Family extends Model<Family> {
+export default class Family extends Model<Family, Partial<Family>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -1058,7 +1058,7 @@ export default class Family extends Model<Family> {
   "./null/offices.ts": "import { Model, Column, Table } from 'sequelize-typescript'
 
 @Table({ tableName: 'offices' })
-export default class Offices extends Model<Offices> {
+export default class Offices extends Model<Offices, Partial<Offices>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -1105,7 +1105,7 @@ export default class Offices extends Model<Offices> {
   "./null/orderdetails.ts": "import { Model, Column, Table } from 'sequelize-typescript'
 
 @Table({ tableName: 'orderdetails' })
-export default class Orderdetails extends Model<Orderdetails> {
+export default class Orderdetails extends Model<Orderdetails, Partial<Orderdetails>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -1137,7 +1137,7 @@ export default class Orderdetails extends Model<Orderdetails> {
   "./null/orders.ts": "import { Model, Column, Table } from 'sequelize-typescript'
 
 @Table({ tableName: 'orders' })
-export default class Orders extends Model<Orders> {
+export default class Orders extends Model<Orders, Partial<Orders>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -1174,7 +1174,7 @@ export default class Orders extends Model<Orders> {
   "./null/payments.ts": "import { Model, Column, Table } from 'sequelize-typescript'
 
 @Table({ tableName: 'payments' })
-export default class Payments extends Model<Payments> {
+export default class Payments extends Model<Payments, Partial<Payments>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -1201,7 +1201,7 @@ export default class Payments extends Model<Payments> {
   "./null/productlines.ts": "import { Model, Column, Table } from 'sequelize-typescript'
 
 @Table({ tableName: 'productlines' })
-export default class Productlines extends Model<Productlines> {
+export default class Productlines extends Model<Productlines, Partial<Productlines>> {
   @Column({
     allowNull: false,
     primaryKey: true,
@@ -1221,7 +1221,7 @@ export default class Productlines extends Model<Productlines> {
   "./null/products.ts": "import { Model, Column, Table } from 'sequelize-typescript'
 
 @Table({ tableName: 'products' })
-export default class Products extends Model<Products> {
+export default class Products extends Model<Products, Partial<Products>> {
   @Column({
     allowNull: false,
     primaryKey: true,

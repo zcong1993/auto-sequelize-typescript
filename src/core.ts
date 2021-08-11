@@ -24,7 +24,7 @@ const generateText = (
   const modelClassName = camelcase(tableName, { pascalCase: true })
 
   res += `@Table({ tableName: '${tableName}' })\n`
-  res += `export default class ${modelClassName} extends Model<${modelClassName}> {\n`
+  res += `export default class ${modelClassName} extends Model<${modelClassName}, Partial<${modelClassName}>> {\n`
 
   indent = im.go()
   let index = 0
