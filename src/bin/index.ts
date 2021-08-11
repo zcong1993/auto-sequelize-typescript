@@ -12,18 +12,7 @@ const normalizePath = (p: string, root: string = process.cwd()): string =>
 const cli = cac('auto-seq-ts')
 
 cli
-  .option('--dialect [dialect]', 'db dialect', {
-    default: 'mysql',
-  })
-  .option('--host [host]', 'db host', {
-    default: 'localhost',
-  })
-  .option('--port [port]', 'db port', {
-    default: '3306',
-  })
-  .option('--user [user]', 'db user')
-  .option('--password [password]', 'db password')
-  .option('--db [db]', 'db database')
+  .option('--uri [uri]', 'db connection string')
   .option('--out [out]', 'output folder', {
     default: './models',
   })
@@ -47,7 +36,7 @@ if (options.h || options.v) {
   process.exit(0)
 }
 
-const required: string[] = ['user', 'password', 'db']
+const required: string[] = ['uri']
 
 for (const f of required) {
   if (!options[f]) {
@@ -70,14 +59,7 @@ if (!existsSync(options.out)) {
   mkdirp(options.out)
 }
 
-const seq = new Sequelize({
-  dialect: options.dialect,
-  host: options.host,
-  port: options.port,
-  username: options.user,
-  password: options.password,
-  database: options.db,
-})
+const seq = new Sequelize(options.uri)
 
 if (options.typeorm) {
   console.log('generate typeorm model')
