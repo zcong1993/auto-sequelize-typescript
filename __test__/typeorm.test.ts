@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize'
-import { auto } from '../src'
+import { autoTypeorm } from '../src'
 
 const seq = new Sequelize(process.env.MYSQL_URL)
 
@@ -7,8 +7,8 @@ afterAll(async () => {
   await seq.close()
 })
 
-it('normal config should work well', async () => {
-  const res = await auto(seq, {
+it('normal config should work well for typeorm', async () => {
+  const res = await autoTypeorm(seq, {
     test: true,
     out: './null',
   })
@@ -16,8 +16,8 @@ it('normal config should work well', async () => {
   expect(res).toMatchSnapshot()
 })
 
-it('tables option should work well', async () => {
-  const res = await auto(seq, {
+it('tables option should work well for typeorm', async () => {
+  const res = await autoTypeorm(seq, {
     test: true,
     out: './null',
     tables: ['orders', 'products'],
@@ -26,8 +26,8 @@ it('tables option should work well', async () => {
   expect(res).toMatchSnapshot()
 })
 
-it('exclude option should work well', async () => {
-  const res = await auto(seq, {
+it('exclude option should work well for typeorm', async () => {
+  const res = await autoTypeorm(seq, {
     test: true,
     out: './null',
     exclude: ['orders', 'products'],
@@ -36,8 +36,8 @@ it('exclude option should work well', async () => {
   expect(res).toMatchSnapshot()
 })
 
-it('withColumnType option should work well', async () => {
-  const res = await auto(seq, {
+it('withColumnType option should work well for typeorm', async () => {
+  const res = await autoTypeorm(seq, {
     test: true,
     out: './null',
     withColumnType: false,
