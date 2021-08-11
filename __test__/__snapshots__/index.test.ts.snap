@@ -168,14 +168,14 @@ export default class Family extends Model<Family, Partial<Family>> {
     defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
     type: DataType.DATE,
   })
-  createdAt?: Date
+  createdAt: Date
 
   @Column({
     allowNull: false,
     defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
     type: DataType.DATE,
   })
-  updatedAt?: Date
+  updatedAt: Date
 
   @Column({
     type: DataType.STRING(50),
@@ -512,14 +512,14 @@ export default class Family extends Model<Family, Partial<Family>> {
     defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
     type: DataType.DATE,
   })
-  createdAt?: Date
+  createdAt: Date
 
   @Column({
     allowNull: false,
     defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
     type: DataType.DATE,
   })
-  updatedAt?: Date
+  updatedAt: Date
 
   @Column({
     type: DataType.STRING(50),
@@ -1040,13 +1040,13 @@ export default class Family extends Model<Family, Partial<Family>> {
     allowNull: false,
     defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
   })
-  createdAt?: Date
+  createdAt: Date
 
   @Column({
     allowNull: false,
     defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
   })
-  updatedAt?: Date
+  updatedAt: Date
 
   @Column
   createdBy?: string

@@ -35,7 +35,7 @@ const generateText = (
     const column = schema[key]
     const tt = getType(column.type)
     const colOpt = getColumnOptions(column) || {}
-    const required = !column.allowNull && !colOpt.defaultValue
+    const required = !column.allowNull || !!colOpt?.defaultValue
 
     let colStr: string
 
