@@ -14,7 +14,8 @@ import {
 const generateText = (
   schema: any,
   tableName: string,
-  withColumnType: boolean = true
+  withColumnType: boolean = true,
+  exportDefault?: boolean
 ) => {
   const importSet = new Set<string>(['Model', 'Column', 'Table'])
   let res: string = ''
@@ -24,7 +25,9 @@ const generateText = (
   const modelClassName = camelcase(tableName, { pascalCase: true })
 
   res += `@Table({ tableName: '${tableName}' })\n`
-  res += `export default class ${modelClassName} extends Model<${modelClassName}, Partial<${modelClassName}>> {\n`
+  res += `export${
+    exportDefault ? ' default' : ''
+  } class ${modelClassName} extends Model<${modelClassName}, Partial<${modelClassName}>> {\n`
 
   indent = im.go()
   let index = 0
@@ -101,6 +104,7 @@ export interface Config {
   exclude?: string[]
   test?: boolean
   withColumnType?: boolean
+  exportDefault?: boolean
 }
 
 export const auto = async (sequelize: Sequelize, config: Config) => {
@@ -118,7 +122,12 @@ export const auto = async (sequelize: Sequelize, config: Config) => {
   for (const t of tbs) {
     console.log(`generate model for table: ${t}`)
     const schema = await sequelize.getQueryInterface().describeTable(t)
-    const content = generateText(schema, t, config.withColumnType)
+    const content = generateText(
+      schema,
+      t,
+      config.withColumnType,
+      config.exportDefault
+    )
     if (config.test) {
       res[`${config.out}/${camelcase(t)}.ts`] = content
     } else {

@@ -426,6 +426,560 @@ export class Productlines {
 }
 `;
 
+exports[`exportDefault option should work well 1`] = `
+Object {
+  "./null/customers.ts": "import { Entity, Column } from 'typeorm'
+
+@Entity({ name: 'customers' })
+export default class Customers {
+  @Column({
+    name: 'customerNumber',
+    nullable: false,
+    primary: true,
+    type: 'int',
+  })
+  customerNumber: number
+
+  @Column({
+    name: 'customerName',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  customerName: string
+
+  @Column({
+    name: 'contactLastName',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  contactLastName: string
+
+  @Column({
+    name: 'contactFirstName',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  contactFirstName: string
+
+  @Column({
+    name: 'phone',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  phone: string
+
+  @Column({
+    name: 'addressLine1',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  addressLine1: string
+
+  @Column({
+    name: 'addressLine2',
+    type: 'varchar',
+    length: 50,
+  })
+  addressLine2?: string
+
+  @Column({
+    name: 'city',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  city: string
+
+  @Column({
+    name: 'state',
+    type: 'varchar',
+    length: 50,
+  })
+  state?: string
+
+  @Column({
+    name: 'postalCode',
+    type: 'varchar',
+    length: 15,
+  })
+  postalCode?: string
+
+  @Column({
+    name: 'country',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  country: string
+
+  @Column({
+    name: 'salesRepEmployeeNumber',
+    type: 'int',
+  })
+  salesRepEmployeeNumber?: number
+
+  @Column({
+    name: 'creditLimit',
+    type: 'decimal',
+  })
+  creditLimit?: number
+}
+",
+  "./null/employees.ts": "import { Entity, Column } from 'typeorm'
+
+@Entity({ name: 'employees' })
+export default class Employees {
+  @Column({
+    name: 'employeeNumber',
+    nullable: false,
+    primary: true,
+    type: 'int',
+  })
+  employeeNumber: number
+
+  @Column({
+    name: 'lastName',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  lastName: string
+
+  @Column({
+    name: 'firstName',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  firstName: string
+
+  @Column({
+    name: 'extension',
+    nullable: false,
+    type: 'varchar',
+    length: 10,
+  })
+  extension: string
+
+  @Column({
+    name: 'email',
+    nullable: false,
+    type: 'varchar',
+    length: 100,
+  })
+  email: string
+
+  @Column({
+    name: 'officeCode',
+    nullable: false,
+    type: 'varchar',
+    length: 10,
+  })
+  officeCode: string
+
+  @Column({
+    name: 'reportsTo',
+    type: 'int',
+  })
+  reportsTo?: number
+
+  @Column({
+    name: 'jobTitle',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  jobTitle: string
+}
+",
+  "./null/family.ts": "import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+
+@Entity({ name: 'family' })
+export default class Family {
+  @PrimaryGeneratedColumn({
+    name: 'family_id',
+    type: 'int',
+  })
+  familyId: number
+
+  @Column({
+    name: 'name',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  name: string
+
+  @Column({
+    name: 'phase',
+    type: 'varchar',
+    length: 50,
+  })
+  phase?: string
+
+  @Column({
+    name: 'customer_id',
+    comment: 'comment',
+    type: 'varchar',
+    length: 64,
+  })
+  customerId?: string
+
+  @Column({
+    name: 'created_at',
+    nullable: false,
+    default: () => 'CURRENT_TIMESTAMP',
+    type: 'timestamp',
+  })
+  createdAt: Date
+
+  @Column({
+    name: 'updated_at',
+    nullable: false,
+    default: () => 'CURRENT_TIMESTAMP',
+    type: 'timestamp',
+  })
+  updatedAt: Date
+
+  @Column({
+    name: 'created_by',
+    type: 'varchar',
+    length: 50,
+  })
+  createdBy?: string
+
+  @Column({
+    name: 'updated_by',
+    type: 'varchar',
+    length: 50,
+  })
+  updatedBy?: string
+}
+",
+  "./null/offices.ts": "import { Entity, Column } from 'typeorm'
+
+@Entity({ name: 'offices' })
+export default class Offices {
+  @Column({
+    name: 'officeCode',
+    nullable: false,
+    primary: true,
+    type: 'varchar',
+    length: 10,
+  })
+  officeCode: string
+
+  @Column({
+    name: 'city',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  city: string
+
+  @Column({
+    name: 'phone',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  phone: string
+
+  @Column({
+    name: 'addressLine1',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  addressLine1: string
+
+  @Column({
+    name: 'addressLine2',
+    type: 'varchar',
+    length: 50,
+  })
+  addressLine2?: string
+
+  @Column({
+    name: 'state',
+    type: 'varchar',
+    length: 50,
+  })
+  state?: string
+
+  @Column({
+    name: 'country',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  country: string
+
+  @Column({
+    name: 'postalCode',
+    nullable: false,
+    type: 'varchar',
+    length: 15,
+  })
+  postalCode: string
+
+  @Column({
+    name: 'territory',
+    nullable: false,
+    type: 'varchar',
+    length: 10,
+  })
+  territory: string
+}
+",
+  "./null/orderdetails.ts": "import { Entity, Column } from 'typeorm'
+
+@Entity({ name: 'orderdetails' })
+export default class Orderdetails {
+  @Column({
+    name: 'orderNumber',
+    nullable: false,
+    primary: true,
+    type: 'int',
+  })
+  orderNumber: number
+
+  @Column({
+    name: 'productCode',
+    nullable: false,
+    primary: true,
+    type: 'varchar',
+    length: 15,
+  })
+  productCode: string
+
+  @Column({
+    name: 'quantityOrdered',
+    nullable: false,
+    type: 'int',
+  })
+  quantityOrdered: number
+
+  @Column({
+    name: 'priceEach',
+    nullable: false,
+    type: 'decimal',
+  })
+  priceEach: number
+
+  @Column({
+    name: 'orderLineNumber',
+    nullable: false,
+    type: 'smallint',
+  })
+  orderLineNumber: number
+}
+",
+  "./null/orders.ts": "import { Entity, Column } from 'typeorm'
+
+@Entity({ name: 'orders' })
+export default class Orders {
+  @Column({
+    name: 'orderNumber',
+    nullable: false,
+    primary: true,
+    type: 'int',
+  })
+  orderNumber: number
+
+  @Column({
+    name: 'orderDate',
+    nullable: false,
+    type: 'date',
+  })
+  orderDate: Date
+
+  @Column({
+    name: 'requiredDate',
+    nullable: false,
+    type: 'date',
+  })
+  requiredDate: Date
+
+  @Column({
+    name: 'shippedDate',
+    type: 'date',
+  })
+  shippedDate?: Date
+
+  @Column({
+    name: 'status',
+    nullable: false,
+    type: 'varchar',
+    length: 15,
+  })
+  status: string
+
+  @Column({
+    name: 'comments',
+    type: 'text',
+  })
+  comments?: string
+
+  @Column({
+    name: 'customerNumber',
+    nullable: false,
+    type: 'int',
+  })
+  customerNumber: number
+}
+",
+  "./null/payments.ts": "import { Entity, Column } from 'typeorm'
+
+@Entity({ name: 'payments' })
+export default class Payments {
+  @Column({
+    name: 'customerNumber',
+    nullable: false,
+    primary: true,
+    type: 'int',
+  })
+  customerNumber: number
+
+  @Column({
+    name: 'checkNumber',
+    nullable: false,
+    primary: true,
+    type: 'varchar',
+    length: 50,
+  })
+  checkNumber: string
+
+  @Column({
+    name: 'paymentDate',
+    nullable: false,
+    type: 'date',
+  })
+  paymentDate: Date
+
+  @Column({
+    name: 'amount',
+    nullable: false,
+    type: 'decimal',
+  })
+  amount: number
+}
+",
+  "./null/productlines.ts": "import { Entity, Column } from 'typeorm'
+
+@Entity({ name: 'productlines' })
+export default class Productlines {
+  @Column({
+    name: 'productLine',
+    nullable: false,
+    primary: true,
+    type: 'varchar',
+    length: 50,
+  })
+  productLine: string
+
+  @Column({
+    name: 'textDescription',
+    type: 'varchar',
+    length: 4000,
+  })
+  textDescription?: string
+
+  @Column({
+    name: 'htmlDescription',
+    type: 'mediumtext',
+  })
+  htmlDescription?: string
+
+  @Column({
+    name: 'image',
+    type: 'mediumblob',
+  })
+  image?: Buffer
+}
+",
+  "./null/products.ts": "import { Entity, Column } from 'typeorm'
+
+@Entity({ name: 'products' })
+export default class Products {
+  @Column({
+    name: 'productCode',
+    nullable: false,
+    primary: true,
+    type: 'varchar',
+    length: 15,
+  })
+  productCode: string
+
+  @Column({
+    name: 'productName',
+    nullable: false,
+    type: 'varchar',
+    length: 70,
+  })
+  productName: string
+
+  @Column({
+    name: 'productLine',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  productLine: string
+
+  @Column({
+    name: 'productScale',
+    nullable: false,
+    type: 'varchar',
+    length: 10,
+  })
+  productScale: string
+
+  @Column({
+    name: 'productVendor',
+    nullable: false,
+    type: 'varchar',
+    length: 50,
+  })
+  productVendor: string
+
+  @Column({
+    name: 'productDescription',
+    nullable: false,
+    type: 'text',
+  })
+  productDescription: string
+
+  @Column({
+    name: 'quantityInStock',
+    nullable: false,
+    type: 'smallint',
+  })
+  quantityInStock: number
+
+  @Column({
+    name: 'buyPrice',
+    nullable: false,
+    type: 'decimal',
+  })
+  buyPrice: number
+
+  @Column({
+    name: 'MSRP',
+    nullable: false,
+    type: 'decimal',
+  })
+  msrp: number
+}
+",
+}
+`;
+
 exports[`normal config should work well for typeorm 1`] = `
 Object {
   "./null/customers.ts": "import { Entity, Column } from 'typeorm'

@@ -45,3 +45,13 @@ it('withColumnType option should work well', async () => {
 
   expect(res).toMatchSnapshot()
 })
+
+it('exportDefault option should work well', async () => {
+  const res = await auto(seq, {
+    test: true,
+    out: './null',
+    exportDefault: true,
+  })
+
+  expect(res).toMatchSnapshot()
+})

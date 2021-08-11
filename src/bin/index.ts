@@ -26,6 +26,10 @@ cli
   )
   .option('--no-column-type', 'if not need column type')
   .option('--typeorm', 'if generate typeorm type')
+  .option(
+    '--export-default',
+    'if use export default instead of export class directly'
+  )
 
 cli.version(require('../../package.json')['version'])
 cli.help()
@@ -68,6 +72,7 @@ if (options.typeorm) {
     tables: options.tables,
     exclude: options.exclude,
     withColumnType: options.columnType,
+    exportDefault: options.exportDefault,
   }).catch((err) => {
     console.log(err)
     process.exit(1)
@@ -78,6 +83,7 @@ if (options.typeorm) {
     tables: options.tables,
     exclude: options.exclude,
     withColumnType: options.columnType,
+    exportDefault: options.exportDefault,
   }).catch((err) => {
     console.log(err)
     process.exit(1)
