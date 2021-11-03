@@ -26,20 +26,21 @@ jobs:
         - 3306:3306
     steps:
       - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
       - uses: actions/setup-node@v2
         with:
           # registry-url: "https://registry.npmjs.org"
           node-version: 16
-          cache: 'yarn'
+          cache: pnpm
       - name: install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
       - name: Prepare mysql
         run: |
           mysql -h 127.0.0.1 -u root -proot sample < __test__/sample.sql
       - name: run test
-        run: yarn test:cov
+        run: pnpm test:cov
         env:
             MYSQL_URL: "mysql://root:root@localhost:3306/sample"
       - uses: codecov/codecov-action@v2
-        # with:
-        #   token: ${{ secrets.CODECOV_TOKEN }}

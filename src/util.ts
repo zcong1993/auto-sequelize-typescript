@@ -11,14 +11,7 @@ const typeWithLength = (
   return isNull(lengthStr) ? type : `${type}${lengthStr}`
 }
 
-export const isEmptyObj = (obj: any) => {
-  for (const key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      return false
-    }
-  }
-  return true
-}
+export const isEmptyObj = _.isEmpty
 
 export const wrap = (str: string, q: string = "'"): string => `${q}${str}${q}`
 
@@ -193,7 +186,7 @@ export const getType = (
       'BIT',
     ].includes(t)
   ) {
-    if (type === 'TINYINT(1)') {
+    if (type === 'BIT') {
       return {
         tsType: 'boolean',
         columnType: getColumType(type),

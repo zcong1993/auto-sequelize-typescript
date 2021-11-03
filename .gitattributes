@@ -2,3 +2,4 @@
 src/bin/*.ts linguist-language=TypeScript
 .husky/* linguist-vendored
 scripts/* linguist-vendored
+.eslintrc.js linguist-vendored
