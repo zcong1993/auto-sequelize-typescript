@@ -19,6 +19,7 @@ CREATE TABLE `customers` (
   `country` varchar(50) NOT NULL,
   `salesRepEmployeeNumber` int(11) DEFAULT NULL,
   `creditLimit` decimal(10,2) DEFAULT NULL,
+  `status` bit(1) DEFAULT b'0',
   PRIMARY KEY (`customerNumber`),
   KEY `salesRepEmployeeNumber` (`salesRepEmployeeNumber`),
   CONSTRAINT `customers_ibfk_1` FOREIGN KEY (`salesRepEmployeeNumber`) REFERENCES `employees` (`employeeNumber`)

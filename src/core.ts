@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize'
-import * as camelcase from 'camelcase'
+import camelcase from 'camelcase'
 import { IndentManager } from './im'
 import {
   getType,

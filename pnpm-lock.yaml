@@ -10,6 +10,7 @@ specifiers:
   '@zcong/js-release': ^0.2.5
   cac: ^6.7.11
   camelcase: ^6.2.0
+  escape-quotes: ^1.0.2
   eslint: ^8.1.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-jest: ^25.2.2
@@ -31,6 +32,7 @@ specifiers:
 dependencies:
   cac: 6.7.11
   camelcase: 6.2.0
+  escape-quotes: 1.0.2
   lodash: 4.17.21
   mkdirp: 1.0.4
   mysql2: 2.3.2
@@ -1785,10 +1787,15 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /escape-quotes/1.0.2:
+    resolution: {integrity: sha1-tIltSmz4LdWzP0m3E0CMY4D2zZc=}
+    dependencies:
+      escape-string-regexp: 1.0.5
+    dev: false
+
   /escape-string-regexp/1.0.5:
     resolution: {integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=}
     engines: {node: '>=0.8.0'}
-    dev: true
 
   /escape-string-regexp/2.0.0:
     resolution: {integrity: sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==}

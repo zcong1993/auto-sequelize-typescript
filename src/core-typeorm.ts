@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize'
-import * as camelcase from 'camelcase'
-import * as _ from 'lodash'
+import camelcase from 'camelcase'
+import _ from 'lodash'
 import { Config } from './core'
 import { IndentManager } from './im'
 import { object2code, wrap, getColumnOptions, writeFile } from './util'
@@ -29,15 +29,8 @@ const getType = (
       'DECIMAL',
       'FLOAT',
       'DOUBLE',
-      'BIT',
     ].includes(t)
   ) {
-    if (type === 'TINYINT(1)') {
-      return {
-        tsType: 'boolean',
-        columnType: getColumType(type),
-      }
-    }
     return {
       tsType: 'number',
       columnType: getColumType(type),
@@ -60,7 +53,7 @@ const getType = (
     }
   }
 
-  if (['BLOB', 'TINYBLOB', 'MEDIUMBLOB', 'LONGBLOB'].includes(t)) {
+  if (['BIT', 'BLOB', 'TINYBLOB', 'MEDIUMBLOB', 'LONGBLOB'].includes(t)) {
     return {
       tsType: 'Buffer',
       columnType: getColumType(type),
@@ -79,11 +72,17 @@ const getType = (
 
 const getColumType = (t: string): object => {
   const tt = t.toLowerCase()
-  const type = wrap(tt.split('(')[0])
+  const type = wrap(tt.split('(', 1)[0])
   // bool
-  if (tt === 'boolean' || tt === 'bit(1)' || tt === 'bit') {
+  if (tt === 'boolean') {
     return { type: 'bool' }
   }
+
+  // bit
+  if (tt.match(/^bit/)) {
+    return { type }
+  }
+
   // int
   if (tt.match(/^(smallint|mediumint|tinyint|int)/)) {
     const length = getLength(tt)
@@ -269,6 +268,7 @@ const generateText = (
 
       if (colOpt.comment) {
         colOpt.comment = wrap(colOpt.comment)
+        console.log(key, colOpt.comment)
       }
 
       let decoratorName = 'Column'

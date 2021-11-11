@@ -1,5 +1,6 @@
 import * as fs from 'fs'
-import * as _ from 'lodash'
+import _ from 'lodash'
+import escapeQuotes from 'escape-quotes'
 import { IndentManager } from './im'
 
 const isNull = (input: any) => input === null
@@ -13,7 +14,10 @@ const typeWithLength = (
 
 export const isEmptyObj = _.isEmpty
 
-export const wrap = (str: string, q: string = "'"): string => `${q}${str}${q}`
+export const wrap = (str: string, q: string = "'"): string => {
+  const s = str.replace(/\n/g, '\\n')
+  return `${q}${escapeQuotes(s)}${q}`
+}
 
 export const writeFile = (filePath: string, content: string) => {
   return fs.writeFileSync(filePath, content)
@@ -228,3 +232,8 @@ export const getType = (
 
   throw new Error(`type ${type} not impl yet`)
 }
+
+export const isNumeric = (value: any) =>
+  ['string', 'number'].includes(typeof value) &&
+  !isNaN(parseFloat(value)) &&
+  isFinite(value as any)
