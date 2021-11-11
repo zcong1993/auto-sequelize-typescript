@@ -268,7 +268,6 @@ const generateText = (
 
       if (colOpt.comment) {
         colOpt.comment = wrap(colOpt.comment)
-        console.log(key, colOpt.comment)
       }
 
       let decoratorName = 'Column'
