@@ -1,3 +1,9 @@
+## [0.5.2](https://github.com/zcong1993/auto-sequelize-typescript/compare/v0.5.1...v0.5.2) (2021-11-11)
+
+### Bug Fixes
+
+- bit type ([f76ebb3](https://github.com/zcong1993/auto-sequelize-typescript/commit/f76ebb30a75e71e362c9256102b4d7d20673a2d0))
+
 ## [0.5.1](https://github.com/zcong1993/auto-sequelize-typescript/compare/v0.5.0...v0.5.1) (2021-11-03)
 
 # [0.5.0](https://github.com/zcong1993/auto-sequelize-typescript/compare/v0.4.1...v0.5.0) (2021-08-11)
