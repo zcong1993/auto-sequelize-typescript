@@ -9,7 +9,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.3.0
   '@zcong/js-release': ^0.2.5
   cac: ^6.7.11
-  camelcase: ^6.2.0
+  camelcase: ^7.0.0
   escape-quotes: ^1.0.2
   eslint: ^8.1.0
   eslint-config-prettier: ^8.3.0
@@ -31,7 +31,7 @@ specifiers:
 
 dependencies:
   cac: 6.7.11
-  camelcase: 6.2.0
+  camelcase: 7.0.0
   escape-quotes: 1.0.2
   lodash: 4.17.21
   mkdirp: 1.0.4
@@ -1342,6 +1342,12 @@ packages:
   /camelcase/6.2.0:
     resolution: {integrity: sha512-c7wVvbw3f37nuobQNtgsgG9POC9qMbNuMQmTCqZv23b6MIz0fcYpBiOlv9gEN/hdLdnZTDQhg6e9Dq5M1vKvfg==}
     engines: {node: '>=10'}
+    dev: true
+
+  /camelcase/7.0.0:
+    resolution: {integrity: sha512-JToIvOmz6nhGsUhAYScbo2d6Py5wojjNfoxoc2mEVLUdJ70gJK2gnd+ABY1Tc3sVMyK7QDPtN0T/XdlCQWITyQ==}
+    engines: {node: '>=14.16'}
+    dev: false
 
   /caniuse-lite/1.0.30001275:
     resolution: {integrity: sha512-ihJVvj8RX0kn9GgP43HKhb5q9s2XQn4nEQhdldEJvZhCsuiB2XOq6fAMYQZaN6FPWfsr2qU0cdL0CSbETwbJAg==}
