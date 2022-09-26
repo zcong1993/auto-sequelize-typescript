@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`exclude option should work well 1`] = `
-Object {
+{
   "./null/customers.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'customers' })
@@ -351,7 +351,7 @@ export class Productlines extends Model<Productlines, Partial<Productlines>> {
 `;
 
 exports[`exportDefault option should work well 1`] = `
-Object {
+{
   "./null/customers.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'customers' })
@@ -807,7 +807,7 @@ export default class Products extends Model<Products, Partial<Products>> {
 `;
 
 exports[`normal config should work well 1`] = `
-Object {
+{
   "./null/customers.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'customers' })
@@ -1263,7 +1263,7 @@ export class Products extends Model<Products, Partial<Products>> {
 `;
 
 exports[`tables option should work well 1`] = `
-Object {
+{
   "./null/orders.ts": "import { Model, Column, Table, DataType } from 'sequelize-typescript'
 
 @Table({ tableName: 'orders' })
@@ -1374,7 +1374,7 @@ export class Products extends Model<Products, Partial<Products>> {
 `;
 
 exports[`withColumnType option should work well 1`] = `
-Object {
+{
   "./null/customers.ts": "import { Model, Column, Table } from 'sequelize-typescript'
 
 @Table({ tableName: 'customers' })
