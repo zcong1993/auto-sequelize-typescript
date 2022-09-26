@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize'
 import { auto } from '../src'
 
-const seq = new Sequelize(process.env.MYSQL_URL)
+const seq = new Sequelize(process.env.MYSQL_URL!)
 
 afterAll(async () => {
   await seq.close()

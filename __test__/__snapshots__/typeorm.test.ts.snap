@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`exclude option should work well for typeorm 1`] = `
-Object {
+{
   "./null/customers.ts": "import { Entity, Column } from 'typeorm'
 
 @Entity({ name: 'customers' })
@@ -105,7 +105,7 @@ export class Customers {
 
   @Column({
     name: 'status',
-    default: 'b\\\\'0\\\\'',
+    default: 'b\\'0\\'',
     type: 'bit',
   })
   status: Buffer
@@ -434,7 +434,7 @@ export class Productlines {
 `;
 
 exports[`exportDefault option should work well 1`] = `
-Object {
+{
   "./null/customers.ts": "import { Entity, Column } from 'typeorm'
 
 @Entity({ name: 'customers' })
@@ -538,7 +538,7 @@ export default class Customers {
 
   @Column({
     name: 'status',
-    default: 'b\\\\'0\\\\'',
+    default: 'b\\'0\\'',
     type: 'bit',
   })
   status: Buffer
@@ -995,7 +995,7 @@ export default class Products {
 `;
 
 exports[`normal config should work well for typeorm 1`] = `
-Object {
+{
   "./null/customers.ts": "import { Entity, Column } from 'typeorm'
 
 @Entity({ name: 'customers' })
@@ -1099,7 +1099,7 @@ export class Customers {
 
   @Column({
     name: 'status',
-    default: 'b\\\\'0\\\\'',
+    default: 'b\\'0\\'',
     type: 'bit',
   })
   status: Buffer
@@ -1556,7 +1556,7 @@ export class Products {
 `;
 
 exports[`tables option should work well for typeorm 1`] = `
-Object {
+{
   "./null/orders.ts": "import { Entity, Column } from 'typeorm'
 
 @Entity({ name: 'orders' })
@@ -1689,7 +1689,7 @@ export class Products {
 `;
 
 exports[`withColumnType option should work well for typeorm 1`] = `
-Object {
+{
   "./null/customers.ts": "import { Entity, Column } from 'typeorm'
 
 @Entity({ name: 'customers' })
@@ -1770,7 +1770,7 @@ export class Customers {
 
   @Column({
     name: 'status',
-    default: 'b\\\\'0\\\\'',
+    default: 'b\\'0\\'',
   })
   status: Buffer
 }
