@@ -18,7 +18,7 @@ specifiers:
   jest: ^29.0.0
   lint-staged: ^13.0.0
   lodash: ^4.17.21
-  mkdirp: ^1.0.4
+  mkdirp: ^2.0.0
   mysql2: ^2.3.2
   prettier: ^2.4.1
   sequelize: ^6.9.0
@@ -34,7 +34,7 @@ dependencies:
   camelcase: 6.2.0
   escape-quotes: 1.0.2
   lodash: 4.17.21
-  mkdirp: 1.0.4
+  mkdirp: 2.1.5
   mysql2: 2.3.2
   sequelize: 6.9.0_mysql2@2.3.2
 
@@ -3210,6 +3210,13 @@ packages:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
     engines: {node: '>=10'}
     hasBin: true
+    dev: true
+
+  /mkdirp/2.1.5:
+    resolution: {integrity: sha512-jbjfql+shJtAPrFoKxHOXip4xS+kul9W3OzfzzrqueWK2QMGon2bFH2opl6W9EagBThjEz+iysyi/swOoVfB/w==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dev: false
 
   /modify-values/1.0.1:
     resolution: {integrity: sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==}
