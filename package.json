@@ -58,7 +58,7 @@
     "camelcase": "^6.2.0",
     "escape-quotes": "^1.0.2",
     "lodash": "^4.17.21",
-    "mkdirp": "^2.0.0",
+    "mkdirp": "^3.0.0",
     "mysql2": "^3.0.0",
     "sequelize": "^6.9.0"
   }
