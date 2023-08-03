@@ -1851,8 +1851,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /dottie@2.0.2:
-    resolution: {integrity: sha512-fmrwR04lsniq/uSr8yikThDTrM7epXHBAAjH9TbeH3rEA8tdCO7mRzB9hdmdGyJCxF8KERo9CITcm3kGuoyMhg==}
+  /dottie@2.0.6:
+    resolution: {integrity: sha512-iGCHkfUc5kFekGiqhe8B/mdaurD+lakO9txNnTvKtA6PISrw86LgqHvRzWYPyoE2Ph5aMIrCw9/uko6XHTKCwA==}
 
   /electron-to-chromium@1.3.887:
     resolution: {integrity: sha512-QQUumrEjFDKSVYVdaeBmFdyQGoaV+fCSMyWHvfx/u22bRHSTeBQYt6P4jMY+gFd4kgKB9nqk7RMtWkDB49OYPA==}
@@ -3975,7 +3975,7 @@ packages:
         optional: true
     dependencies:
       debug: 4.3.2
-      dottie: 2.0.2
+      dottie: 2.0.6
       inflection: 1.13.1
       lodash: 4.17.21
       moment: 2.29.1
