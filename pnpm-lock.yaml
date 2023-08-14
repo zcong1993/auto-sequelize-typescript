@@ -1130,7 +1130,7 @@ packages:
       chalk: 4.1.2
       conventional-changelog: 3.1.24
       execa: 5.1.1
-      minimist: 1.2.5
+      minimist: 1.2.8
       prompts: 2.4.2
       semver: 7.3.5
       tempfile: 3.0.0
@@ -2369,7 +2369,7 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
     dependencies:
-      minimist: 1.2.5
+      minimist: 1.2.8
       neo-async: 2.6.2
       source-map: 0.6.1
       wordwrap: 1.0.0
@@ -3324,10 +3324,6 @@ packages:
       arrify: 1.0.1
       is-plain-obj: 1.1.0
       kind-of: 6.0.3
-    dev: true
-
-  /minimist@1.2.5:
-    resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
     dev: true
 
   /minimist@1.2.8:
