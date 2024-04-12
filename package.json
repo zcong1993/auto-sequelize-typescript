@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "cac": "^6.7.11",
-    "camelcase": "^6.2.0",
+    "camelcase": "^8.0.0",
     "escape-quotes": "^1.0.2",
     "lodash": "^4.17.21",
     "mkdirp": "^3.0.0",
