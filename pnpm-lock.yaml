@@ -22,10 +22,10 @@ dependencies:
     version: 3.0.0
   mysql2:
     specifier: ^3.0.0
-    version: 3.9.4
+    version: 3.9.7
   sequelize:
     specifier: ^6.9.0
-    version: 6.29.0(mysql2@3.9.4)
+    version: 6.29.0(mysql2@3.9.7)
 
 devDependencies:
   '@types/jest':
@@ -84,7 +84,7 @@ devDependencies:
     version: 1.18.0
   typeorm:
     specifier: ^0.3.0
-    version: 0.3.0(mysql2@3.9.4)
+    version: 0.3.0(mysql2@3.9.7)
   typescript:
     specifier: ^5.0.0
     version: 5.0.2
@@ -3364,8 +3364,8 @@ packages:
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
 
-  /mysql2@3.9.4:
-    resolution: {integrity: sha512-OEESQuwxMza803knC1YSt7NMuc1BrK9j7gZhCSs2WAyxr1vfiI7QLaLOKTh5c9SWGz98qVyQUbK8/WckevNQhg==}
+  /mysql2@3.9.7:
+    resolution: {integrity: sha512-KnJT8vYRcNAZv73uf9zpXqNbvBG7DJrs+1nACsjZP1HMJ1TgXEy8wnNilXAn/5i57JizXKtrUtwDB7HxT9DDpw==}
     engines: {node: '>= 8.0'}
     dependencies:
       denque: 2.1.0
@@ -3933,10 +3933,10 @@ packages:
       '@types/validator': 13.11.9
       glob: 7.2.0
       reflect-metadata: 0.2.2
-      sequelize: 6.29.0(mysql2@3.9.4)
+      sequelize: 6.29.0(mysql2@3.9.7)
     dev: true
 
-  /sequelize@6.29.0(mysql2@3.9.4):
+  /sequelize@6.29.0(mysql2@3.9.7):
     resolution: {integrity: sha512-m8Wi90rs3NZP9coXE52c7PL4Q078nwYZXqt1IxPvgki7nOFn0p/F0eKsYDBXCPw9G8/BCEa6zZNk0DQUAT4ypA==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
@@ -3977,7 +3977,7 @@ packages:
       lodash: 4.17.21
       moment: 2.30.1
       moment-timezone: 0.5.45
-      mysql2: 3.9.4
+      mysql2: 3.9.7
       pg-connection-string: 2.6.2
       retry-as-promised: 7.0.4
       semver: 7.6.0
@@ -4529,7 +4529,7 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /typeorm@0.3.0(mysql2@3.9.4):
+  /typeorm@0.3.0(mysql2@3.9.7):
     resolution: {integrity: sha512-fGhJql31DRyxT0bxcjD5kAf9hz+aUppp90M93GmlRlCfHq+qKhY70eCEreAgjrlAYmZkfEgDcyMHpcAfrtCe7A==}
     engines: {node: '>= 12.9.0'}
     hasBin: true
@@ -4592,7 +4592,7 @@ packages:
       glob: 7.2.0
       js-yaml: 4.1.0
       mkdirp: 1.0.4
-      mysql2: 3.9.4
+      mysql2: 3.9.7
       reflect-metadata: 0.1.13
       sha.js: 2.4.11
       tslib: 2.3.1
